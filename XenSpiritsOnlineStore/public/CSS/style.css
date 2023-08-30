@@ -1,16 +1,59 @@
 
 
-    
-.XenLogo{
-    background-color: black;
-    height: 40px;
-    width: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
 .OnTopHomePage{
     background-color: black;
     height: 50px;
     padding-top: 10px;
+    position: relative;
 }
+
+.XenTopPage{
+    display: inline;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 4;
+    left: 7;
+
+}
+
+.XenLogo{
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 850px;
+}
+.mainImageHome1{
+    display: inline;
+    position: relative;
+    left: 50;
+    width: 980px;
+    height: 690px;
+}
+.tenSanPham{
+    position: relative;
+    text-align: center;
+    top: -150;
+    left: 445;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    background-color: pink;
+    width: 200;
+}
+.mainImageHome2{
+    display: inline;
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    top: 90;
+    left: 1150;
+}
+
+.mainImageHome{
+    background-color: rgb(57, 57, 57);
+    height: 625px;
+}
+    
+    
