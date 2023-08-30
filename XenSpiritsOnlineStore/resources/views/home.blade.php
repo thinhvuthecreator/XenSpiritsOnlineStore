@@ -21,7 +21,8 @@
       <img class="mainImageHome1" src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/365406008_180389101714595_8719181203100693939_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=X-XOVk3FkEoAX-w-0fY&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfBdFwUFRUg7cnp_mnf20e5d0pImU1NWhmWSQ6CVslKxPg&oe=64F3FF58"></img>
       <h1 class="tenSanPham"> Tên sản phẩm </h1>
       <img class="mainImageHome2" src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/365417176_180389305047908_2672613284199020113_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=jlQNFBbfqosAX-OmjHk&_nc_ht=scontent.fdad3-4.fna&oh=00_AfAZEuA1yB8sdnKlH3C3BqOUhYiVYdVA4gq-2BlUZpmLag&oe=64F48D2C"></img>
-      </div>
+      <img src="https://hashtaglegend.com/storage/app/media/2018%20Articles/August%202018/BAPE%20SSFA%202018/BAPE_SS18Lookbook_1.jpg"></img> 
+    </div>
     </body>
       
   

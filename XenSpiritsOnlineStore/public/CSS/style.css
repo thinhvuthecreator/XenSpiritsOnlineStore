@@ -3,8 +3,10 @@
 .OnTopHomePage{
     background-color: black;
     height: 50px;
+    width: 1730;
     padding-top: 10px;
-    position: relative;
+    position: fixed;
+    
 }
 
 .XenTopPage{
@@ -28,6 +30,7 @@
 .mainImageHome1{
     display: inline;
     position: relative;
+    top: 60;
     left: 50;
     width: 980px;
     height: 690px;
@@ -53,7 +56,8 @@
 
 .mainImageHome{
     background-color: rgb(57, 57, 57);
-    height: 625px;
+    height: 725px;
+
 }
     
     
