@@ -13,14 +13,15 @@
       <h1 class="XenTopPage">XEN.SPIRITS ®</h1>
       <img class="XenLogo" 
            src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/371069644_775675164357293_3698107806014934575_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=DVVao_pWLnUAX97HODH&_nc_ht=scontent.fdad3-4.fna&oh=00_AfDVRF_SuOhNQcvS_pIzb4v_fH8IjvZD3pNu2IOpjyjKaA&oe=64F2CB25"
+          
            alt="img">
       </img>
       
       <ul class="navigator-header">
-        <li><a href="#">Sản phẩm</a></li>
-        <li><a href="#">Giỏ hàng</a></li>
+        <li><a href="http://localhost:8000/products">Sản phẩm</a></li>
+        <li><a href="http://localhost:8000/wishlist">Giỏ hàng</a></li>
         <li><a href="#">Tìm kiếm</a></li>
-        <li><a href="#">Hướng dẫn kích cỡ</a></li>
+        <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
       </ul>
       </div>
 
@@ -32,13 +33,19 @@
           <button class="left-switch-btn"><img src="https://www.svgrepo.com/download/26036/left-arrow.svg"></img></buton>
         </div>
         
-        <img class="mainImageHome2" src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/365417176_180389305047908_2672613284199020113_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=jlQNFBbfqosAX-OmjHk&_nc_ht=scontent.fdad3-4.fna&oh=00_AfAZEuA1yB8sdnKlH3C3BqOUhYiVYdVA4gq-2BlUZpmLag&oe=64F48D2C"></img>
+        <img class="mainImageHome2" 
+             src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/365417176_180389305047908_2672613284199020113_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=jlQNFBbfqosAX-OmjHk&_nc_ht=scontent.fdad3-4.fna&oh=00_AfAZEuA1yB8sdnKlH3C3BqOUhYiVYdVA4gq-2BlUZpmLag&oe=64F48D2C">
+        </img>
       </header>
       <h1 class="lookbook">XEN® LOOKBOOK</h1>
-      <img class="imgEx" src="https://hashtaglegend.com/storage/app/media/2018%20Articles/August%202018/BAPE%20SSFA%202018/BAPE_SS18Lookbook_1.jpg"></img> 
+      <img class="imgEx" 
+           src="https://hashtaglegend.com/storage/app/media/2018%20Articles/August%202018/BAPE%20SSFA%202018/BAPE_SS18Lookbook_1.jpg">
+      </img> 
        
 
-      <footer> By Xen.Spirits® | Since2023.</footer>
+      <footer>
+        <li> By Xen.Spirits® | Since2023.</li>
+      </footer>
    
     </body>
       

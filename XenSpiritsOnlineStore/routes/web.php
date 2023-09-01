@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('xenspirits', function () {
-    return view('home');
-});
 
+Route::get('/', [HomeController::class,'ShowHome']);
+Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
+Route::get('/products',[HomeController::class,'ShowProduct']);
+Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
