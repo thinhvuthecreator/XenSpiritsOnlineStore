@@ -1,6 +1,7 @@
 
 html{
-    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/378/21/desktop-wallpaper-bape-shark-bape-camo.jpg');
+    /* background-image: url('https://e1.pxfuel.com/desktop-wallpaper/378/21/desktop-wallpaper-bape-shark-bape-camo.jpg'); */
+    background-image: url('https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/374556285_776946177563525_4064229089485954597_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=49d041&_nc_ohc=XFKAaOuVO6QAX-ag-Xa&_nc_ht=scontent.fdad3-1.fna&oh=00_AfAM0yBZ-kYskwliKl-DToVAG2xpZJ2bd3pIDc8J4sKxjw&oe=64F6FF33');
 }
 
 .OnTopHomePage{
@@ -52,10 +53,11 @@ html{
     left: 850px;
 }
 
-.XenLogo :hover,
-.XenLogo :active{
-    src: url('https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/374559179_776688794255930_1761819913023539923_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=49d041&_nc_ohc=2U4jOYB6S_kAX-b_Gwc&_nc_ht=scontent.fdad3-5.fna&oh=00_AfAySsb4DyLLd78zApcCnjZCbEtrIrfmiFjOT5-OCnMWUg&oe=64F6E3A4');
+.OnTopHomePage img:hover,.OnTopHomePage img :active{
+    visibility: hidden;
 }
+
+
 .mainImageHome1{
     display: inline;
     position: absolute;
@@ -85,7 +87,6 @@ html{
 }
 
 .mainImageHome{
-    display: block;
     position: relative;
     height: 725px;
     /* background-image: url('https://s3.envato.com/files/479a3c3d-e890-4964-b9ee-c8469c64e688/inline_image_preview.jpg'); */
@@ -169,5 +170,29 @@ button:active{
 footer li{
     display: inline-block;
 }
+
+.social-media{
+    position: relative;
+    top: 90;
+    display: inline;
+    z-index: 1;
+}
+.social-media li{
+    margin-bottom: 50;
+}
+.social-media li img{
+    position: fixed;
+    width: 40;
+    height: 40;
+    transition: all .2s;
+}
+.social-media li img:hover,
+.social-media li img:active{
+
+    width: 60;
+    height: 60;
+
+}
+    
 
 
