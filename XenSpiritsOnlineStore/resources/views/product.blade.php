@@ -4,5 +4,5 @@
     <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
 </head>
 <body>
-    @include('Resuable.on-top-page')
+    @include('Reusable.on-top-page')
 </body>
