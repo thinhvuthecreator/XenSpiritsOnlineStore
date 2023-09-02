@@ -152,14 +152,6 @@ button:active{
     width: 50%;
     padding: 10px;
 }
- .imgEx{
-    display: block;
-    margin-top: 20;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  
- }
  footer{
     list-style: none;
     text-align: center;
@@ -194,10 +186,6 @@ footer li{
     width: 60;
     height: 60;
 
-}
-
-.row{
-    display: inline-block;
 }
 
 .row img{

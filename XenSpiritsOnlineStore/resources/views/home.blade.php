@@ -51,9 +51,6 @@
   
 
       <h1 class="lookbook">XEN® LOOKBOOK</h1>
-      <!-- <img class="imgEx" 
-           src="https://hashtaglegend.com/storage/app/media/2018%20Articles/August%202018/BAPE%20SSFA%202018/BAPE_SS18Lookbook_1.jpg">
-      </img>  -->
 
       <div class="row">
         <div class="col span-1-of-3">
@@ -68,6 +65,7 @@
          <!-- <img src="{{asset('Resource/lookbook3.png')}}" alt="img"></img>  -->
          <img style= "background-color:blue"></img>
         </div>
+        
       </div>
 
       <div class="row">
