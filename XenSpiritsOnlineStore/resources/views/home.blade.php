@@ -3,7 +3,8 @@
 
     <head>
       <title>Xen. Spirits®</title>
-      <link rel="stylesheet" href="{{asset('CSS/homestyle.css')}}"/>
+      <link rel="stylesheet" href="{{asset('CSS/homestyle.css')}}">
+      <link rel="stylesheet" href="{{asset('CSS/grid.css')}}">
       <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
     </head>    
 
@@ -50,9 +51,36 @@
   
 
       <h1 class="lookbook">XEN® LOOKBOOK</h1>
-      <img class="imgEx" 
+      <!-- <img class="imgEx" 
            src="https://hashtaglegend.com/storage/app/media/2018%20Articles/August%202018/BAPE%20SSFA%202018/BAPE_SS18Lookbook_1.jpg">
-      </img> 
+      </img>  -->
+
+      <div class="row">
+        <div class="col span-1-of-3">
+         <!-- <img src="{{asset('Resource/lookbook1.png')}}" alt="img"></img>  -->
+         <img style= "background-color:blue"></img>
+        </div>
+        <div class="col span-2-of-3">
+         <!-- <img src="{{asset('Resource/lookbook2.png')}}" alt="img"></img>  -->
+         <img style= "background-color:blue"></img>
+        </div>
+        <div class="col span-3-of-3">
+         <!-- <img src="{{asset('Resource/lookbook3.png')}}" alt="img"></img>  -->
+         <img style= "background-color:blue"></img>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col span-1-of-3">
+        <h1 style="color:white">qweqweqeqwe<h1>
+        </div>
+        <div class="col span-2-of-3">
+        <h1 style="color:white">qweqweqeqwe<h1>
+        </div>
+        <div class="col span-3-of-3">
+        <h1 style="color:white">qweqweqeqwe<h1>
+        </div>
+      </div>
 
        
       

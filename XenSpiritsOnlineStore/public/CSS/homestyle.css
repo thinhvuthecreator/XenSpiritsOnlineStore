@@ -194,6 +194,15 @@ footer li{
     height: 60;
 
 }
+
+.row{
+    display: inline-block;
+}
+
+.row img{
+ width: 400;
+ height: 500;
+}
     
 
 
