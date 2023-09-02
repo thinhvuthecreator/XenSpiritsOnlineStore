@@ -43,7 +43,7 @@
         <ul class="social-media">
         <li><a href="https://www.facebook.com/profile.php?id=100092305197104" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"></img></a></li>
         <li><a href="https://www.instagram.com/xen.spirits/" target="_blank"><img src="https://i0.wp.com/soundings.com/wp-content/uploads/2021/03/INSTAGRAM-Logo-Round-1000px.png?ssl=1"></img></a></li>
-        <li><a><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small/tiktok-icon-free-png.png" target="_blank"></img></a></li>
+        <li><a href="https://www.tiktok.com/@xen.spirits" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small/tiktok-icon-free-png.png" target="_blank"></img></a></li>
       </ul>
       </header>
 
