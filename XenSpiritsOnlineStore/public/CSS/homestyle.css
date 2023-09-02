@@ -188,6 +188,12 @@ footer li{
 
 }
 
+.row{
+    position: relative;
+    top: 20;
+    left: 70;
+}
+
 .row img{
  width: 400;
  height: 500;

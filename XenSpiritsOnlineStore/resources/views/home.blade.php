@@ -45,7 +45,7 @@
         <li><a href="https://www.facebook.com/profile.php?id=100092305197104" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"></img></a></li>
         <li><a href="https://www.instagram.com/xen.spirits/" target="_blank"><img src="https://i0.wp.com/soundings.com/wp-content/uploads/2021/03/INSTAGRAM-Logo-Round-1000px.png?ssl=1"></img></a></li>
         <li><a href="https://www.tiktok.com/@xen.spirits" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small/tiktok-icon-free-png.png" target="_blank"></img></a></li>
-      </ul>
+        </ul>
       </header>
 
   
@@ -54,16 +54,13 @@
 
       <div class="row">
         <div class="col span-1-of-3">
-         <!-- <img src="{{asset('Resource/lookbook1.png')}}" alt="img"></img>  -->
-         <img style= "background-color:blue"></img>
+         <img src="{{asset('Resource/lookbook1.png')}}" alt="img"></img> 
         </div>
         <div class="col span-2-of-3">
-         <!-- <img src="{{asset('Resource/lookbook2.png')}}" alt="img"></img>  -->
-         <img style= "background-color:blue"></img>
+         <img src="{{asset('Resource/lookbook2.png')}}" alt="img"></img> 
         </div>
         <div class="col span-3-of-3">
-         <!-- <img src="{{asset('Resource/lookbook3.png')}}" alt="img"></img>  -->
-         <img style= "background-color:blue"></img>
+         <img src="{{asset('Resource/lookbook3.png')}}" alt="img"></img> 
         </div>
         
       </div>
