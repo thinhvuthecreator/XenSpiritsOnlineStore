@@ -69,6 +69,10 @@ hr{
     display: inline;
 }
 
+.OnTopHomePage img:hover,.OnTopHomePage img :active{
+    visibility: hidden;
+}
+
 .size-guide-image{
     position: relative;
     top: 70;
@@ -88,8 +92,8 @@ hr{
 
 .botton-corner-logo{
     position: fixed;
-    height: 175;
-    width: 220;
-    left: 87%;
-    top: 80%;
+    height: 225;
+    width: 250;
+    left: 86%;
+    top: 75%;
 }
