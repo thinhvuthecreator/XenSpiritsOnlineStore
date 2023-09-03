@@ -31,7 +31,11 @@
       </div>
       <header class="mainImageHome">
         <div class="aoVaTenSanPham">
-          <img class="mainImageHome1" src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/365406008_180389101714595_8719181203100693939_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=X-XOVk3FkEoAX-w-0fY&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfBdFwUFRUg7cnp_mnf20e5d0pImU1NWhmWSQ6CVslKxPg&oe=64F3FF58"></img>
+          <div class="mainImageHome1-container">
+          <img class="mainImageHome1" src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/365406008_180389101714595_8719181203100693939_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=X-XOVk3FkEoAX-w-0fY&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfBdFwUFRUg7cnp_mnf20e5d0pImU1NWhmWSQ6CVslKxPg&oe=64F3FF58">
+          <p class="product-title">Xem sản phẩm</p>
+          </img>
+          </div>
           <h1 class="tenSanPham"> Xen. Spirits Basic Logo T-Shirt </h1>
           <button class="right-switch-btn"><img src="{{asset('Resource/right-arrow.png')}}"></img></buton>
           <button class="left-switch-btn"><img src="{{asset('Resource/left-arrow.png')}}"></img></buton>
@@ -56,15 +60,15 @@
       
       <div class="lookbook-product-container">
        <div class="lookbook-product">
-        <div class="lookbook-product-item1">
+        <div class="lookbook-product-item">
          <img src="{{asset('Resource/lookbook1.png')}}" alt="img"><p class="item-title">Street Language Denim Jacket</p></img> 
          
         </div>
-        <div class="lookbook-product-item2">
+        <div class="lookbook-product-item">
          <img src="{{asset('Resource/lookbook2.png')}}" alt="img"> <p class="item-title">Xen. Gorrila Sweater</p></img> 
         
         </div>
-        <div class="lookbook-product-item3">
+        <div class="lookbook-product-item">
          <img src="{{asset('Resource/lookbook3.png')}}" alt="img"><p class="item-title">Xen. Super Big Logo Tee</p></img> 
          
        </div>

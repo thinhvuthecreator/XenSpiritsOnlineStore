@@ -59,14 +59,43 @@ html{
 }
 
 
-.mainImageHome1{
-    display: inline;
+.mainImageHome1-container{
+
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    width: 900px;
+    height: 630px;
+}
+
+.mainImageHome1{
     width: 900px;
     height: 630px;
     object-fit: fill;
   
 }
+
+.product-title{
+    top: 90%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.mainImageHome1-container:hover img,.mainImageHome1-.mainImageHome1-container img{
+    opacity: 50%;
+    filter: blur(5px);
+}
+
+.mainImageHome1-container:hover .product-title,.mainImageHome1-.mainImageHome1-container .product-title{
+    opacity: 1;
+    top: 45%;
+}
+
 .mainImageHome2{
     display: inline;
     position: absolute;
@@ -173,7 +202,7 @@ footer li{
 
 .social-media{
     position: relative;
-    top: 50;
+    top: 70;
     display: inline;
     z-index: 1;
 }
@@ -204,16 +233,21 @@ footer li{
 
 .lookbook-product{
     width: 1100;
-    height: 500;
+    height: 580;
     display: flex;
-    margin-left: 200;
+    margin-left: 80;
+}
+
+
+.lookbook-product div, .lookbook-product div img{
+    width: 470;
+    height: 580;
 }
 
 .lookbook-product div{
-    display: grid;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 400;
-    height: 500;
     background-color: black;
     position: relative;
     margin-right: 50;
@@ -222,20 +256,17 @@ footer li{
 .lookbook-product div img{
     position: inherit;
     margin-right: 50;
-    width: 400;
-    height: 500;
-    left: 0;
+    left: 25;
     transition: all .1s;
 }
 
 .item-title{
+    top: 90%;
     position: absolute;
     color: white;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    background-color: black;
+    opacity: 0;
+    transition: all .2s;
 }
 
 .lookbook-product div img:hover,
@@ -244,9 +275,10 @@ footer li{
     filter: blur(5px);
 }
 
-.lookbook-product div img:hover .item-title,
-.lookbook-product div img:active .item-title{
-    opacity: 100;
+.lookbook-product-item:hover .item-title,
+.lookbook-product-item:active .item-title{
+    opacity: 1;
+    top: 40%;
 }
 
     
