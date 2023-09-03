@@ -19,3 +19,4 @@ Route::get('/', [HomeController::class,'ShowHome']);
 Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::get('/products',[HomeController::class,'ShowProduct']);
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
+Route::get('/login',[HomeController::class,'ShowLogin']);
