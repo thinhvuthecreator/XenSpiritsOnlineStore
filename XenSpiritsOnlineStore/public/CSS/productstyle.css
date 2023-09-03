@@ -1,0 +1,11 @@
+
+.lookbook{
+    display: flex;
+    position: relative;
+    top: 100;
+    margin: 0 auto;
+}
+
+.lookbook div{
+    margin-right: 50;
+}

@@ -51,34 +51,27 @@
   
 
       <h1 class="lookbook">XEN® LOOKBOOK</h1>
-
-      <div class="row">
-        <div class="col span-1-of-3">
-         <img src="{{asset('Resource/lookbook1.png')}}" alt="img"></img> 
-        </div>
-        <div class="col span-2-of-3">
-         <img src="{{asset('Resource/lookbook2.png')}}" alt="img"></img> 
-        </div>
-        <div class="col span-3-of-3">
-         <img src="{{asset('Resource/lookbook3.png')}}" alt="img"></img> 
-        </div>
-        
-      </div>
-
-      <div class="row">
-        <div class="col span-1-of-3">
-        <h1 style="color:white">qweqweqeqwe<h1>
-        </div>
-        <div class="col span-2-of-3">
-        <h1 style="color:white">qweqweqeqwe<h1>
-        </div>
-        <div class="col span-3-of-3">
-        <h1 style="color:white">qweqweqeqwe<h1>
-        </div>
-      </div>
-
-       
       
+      <hr></hr>
+      
+      <div class="lookbook-product-container">
+       <div class="lookbook-product">
+        <div class="lookbook-product-item1">
+         <img src="{{asset('Resource/lookbook1.png')}}" alt="img"><p class="item-title">Street Language Denim Jacket</p></img> 
+         
+        </div>
+        <div class="lookbook-product-item2">
+         <img src="{{asset('Resource/lookbook2.png')}}" alt="img"> <p class="item-title">Xen. Gorrila Sweater</p></img> 
+        
+        </div>
+        <div class="lookbook-product-item3">
+         <img src="{{asset('Resource/lookbook3.png')}}" alt="img"><p class="item-title">Xen. Super Big Logo Tee</p></img> 
+         
+       </div>
+       </div>
+      </div>
+        
+ 
       <footer>
         <li> By Xen.Spirits® | Since2023.</li>
       </footer>

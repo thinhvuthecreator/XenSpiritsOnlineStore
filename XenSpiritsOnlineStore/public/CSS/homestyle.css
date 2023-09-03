@@ -146,12 +146,18 @@ button:active{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: block;
     position: relative;
-    top: 10;
+    top: 60;
     text-align: center;
     margin: auto;
     width: 50%;
     padding: 10px;
 }
+
+hr{
+    position: relative;
+    top: 50;
+}
+
  footer{
     list-style: none;
     text-align: center;
@@ -159,7 +165,7 @@ button:active{
     height: 30;
     background-color: black;
     color: rgb(20, 179, 152);
-    margin-top: 10;
+    margin-top: 20;
 }
 footer li{
     display: inline-block;
@@ -167,7 +173,7 @@ footer li{
 
 .social-media{
     position: relative;
-    top: 90;
+    top: 50;
     display: inline;
     z-index: 1;
 }
@@ -188,16 +194,61 @@ footer li{
 
 }
 
-.row{
+.lookbook-product-container{
     position: relative;
-    top: 20;
-    left: 70;
+    margin-top: 40;
+    margin-bottom: 90;
+    top: 50;
+   
 }
 
-.row img{
- width: 400;
- height: 500;
+.lookbook-product{
+    width: 1100;
+    height: 500;
+    display: flex;
+    margin-left: 200;
 }
+
+.lookbook-product div{
+    display: grid;
+    align-items: center;
+    width: 400;
+    height: 500;
+    background-color: black;
+    position: relative;
+    margin-right: 50;
+}
+
+.lookbook-product div img{
+    position: inherit;
+    margin-right: 50;
+    width: 400;
+    height: 500;
+    left: 0;
+    transition: all .1s;
+}
+
+.item-title{
+    position: absolute;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: black;
+}
+
+.lookbook-product div img:hover,
+.lookbook-product div img:active{
+    opacity: 50%;
+    filter: blur(5px);
+}
+
+.lookbook-product div img:hover .item-title,
+.lookbook-product div img:active .item-title{
+    opacity: 100;
+}
+
     
 
 
