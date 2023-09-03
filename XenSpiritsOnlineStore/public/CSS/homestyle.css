@@ -184,7 +184,13 @@ button:active{
 
 hr{
     position: relative;
+    width: 1000;
     top: 50;
+}
+.hr-top{
+
+    top: 4;
+    width: 100%;
 }
 
  footer{

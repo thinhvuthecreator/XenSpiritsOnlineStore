@@ -62,3 +62,8 @@ html{
 .OnTopHomePage img:hover,.OnTopHomePage img :active{
     visibility: hidden;
 }
+hr{
+    position: relative;
+    z-index: 1;
+    top: 48;
+}

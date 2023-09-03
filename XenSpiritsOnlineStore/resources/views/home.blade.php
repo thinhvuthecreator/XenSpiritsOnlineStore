@@ -28,7 +28,9 @@
         <li><a href="#">Tìm kiếm</a></li>
         <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
       </ul>
+      <hr class="hr-top"></hr>
       </div>
+      
       <header class="mainImageHome">
         <div class="aoVaTenSanPham">
           <div class="mainImageHome1-container">

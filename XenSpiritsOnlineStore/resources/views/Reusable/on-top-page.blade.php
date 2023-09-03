@@ -21,4 +21,5 @@
         <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
       </ul>
  </div>
+ <hr></hr>
 </body>
