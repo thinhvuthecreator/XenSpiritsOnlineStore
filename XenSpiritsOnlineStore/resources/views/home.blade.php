@@ -59,7 +59,7 @@
       <h1 class="lookbook">XEN® LOOKBOOK</h1>
       
       <hr></hr>
-      
+      <div class="container-mother">
       <div class="lookbook-product-container">
        <div class="lookbook-product">
         <div class="lookbook-product-item">
@@ -71,10 +71,28 @@
         
         </div>
         <div class="lookbook-product-item">
-         <img src="{{asset('Resource/lookbook3.png')}}" alt="img"><p class="item-title">Xen. Super Big Logo Tee</p></img> 
+         <img src="{{asset('Resource/lookbook3.png')}}" alt="img"><p class="item-title">Xen. Super Big Logo T-Shirt</p></img> 
          
        </div>
        </div>
+      </div>
+
+      <div class="lookbook-product-container">
+       <div class="lookbook-product">
+        <div class="lookbook-product-item">
+         <img src="{{asset('Resource/lookbook4.png')}}" alt="img"><p class="item-title">Drunk Logo Sweater</p></img> 
+         
+        </div>
+        <div class="lookbook-product-item">
+         <img src="{{asset('Resource/lookbook5.png')}}" alt="img"> <p class="item-title">Sign Of Christ T-Shirt</p></img> 
+        
+        </div>
+        <div class="lookbook-product-item">
+         <img src="{{asset('Resource/lookbook6.png')}}" alt="img"><p class="item-title">Basic Logo Area Denim Jacket</p></img> 
+         
+       </div>
+       </div>
+      </div>
       </div>
         
  

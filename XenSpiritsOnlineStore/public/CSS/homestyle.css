@@ -118,6 +118,7 @@ html{
 
 .mainImageHome{
     position: relative;
+    top: 20;
     height: 725px;
     /* background-image: url('https://s3.envato.com/files/479a3c3d-e890-4964-b9ee-c8469c64e688/inline_image_preview.jpg'); */
  }
@@ -200,7 +201,7 @@ hr{
     height: 30;
     background-color: black;
     color: rgb(20, 179, 152);
-    margin-top: 20;
+    margin-top: 40;
 }
 footer li{
     display: inline-block;
@@ -208,7 +209,7 @@ footer li{
 
 .social-media{
     position: relative;
-    top: 70;
+    top: 60;
     display: inline;
     z-index: 1;
 }
@@ -229,12 +230,11 @@ footer li{
 
 }
 
-.lookbook-product-container{
+.container-mother{
     position: relative;
-    margin-top: 40;
-    margin-bottom: 90;
+    margin-top: 50;
+    margin-bottom: 100;
     top: 50;
-   
 }
 
 .lookbook-product{
@@ -242,6 +242,7 @@ footer li{
     height: 580;
     display: flex;
     margin-left: 80;
+    margin-bottom: 30;
 }
 
 
