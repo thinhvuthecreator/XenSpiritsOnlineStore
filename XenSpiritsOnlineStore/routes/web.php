@@ -20,5 +20,5 @@ Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::get('/products',[HomeController::class,'ShowProduct']);
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
 Route::get('/login',[HomeController::class,'ShowLogin']);
-Route::post('/login',[LoginController::class,'ShowRegister']);
+Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);

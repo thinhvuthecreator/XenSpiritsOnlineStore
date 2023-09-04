@@ -40,8 +40,14 @@
 }
 
 .login-button{
-    margin-left: 115;
+    margin-left: 98;
     margin-top: 20;
+}
+
+.register-button{
+    position: absolute;
+    top: 200;
+    left: 205;
 }
 
 
