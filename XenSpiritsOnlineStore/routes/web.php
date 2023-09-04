@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,5 @@ Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::get('/products',[HomeController::class,'ShowProduct']);
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
 Route::get('/login',[HomeController::class,'ShowLogin']);
+Route::post('/login',[LoginController::class,'ShowRegister']);
+Route::get('/register',[LoginController::class,'ShowRegister']);
