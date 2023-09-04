@@ -21,7 +21,7 @@
     top: 100;
 }
 
-.login-form input{
+.login-form .username-box, .login-form .password-box{
     display: block;
     margin: 0 auto;
     margin-bottom: 10;
@@ -35,8 +35,11 @@
 }
 
 .submit-button{
-    width: 100;
+    width: 120;
     height: 30;
+    margin-left: 143;
+    margin-top: 20;
+
 }
 
 h2{

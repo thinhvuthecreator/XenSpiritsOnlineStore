@@ -12,7 +12,7 @@
         <form class="login-form">
             <input class="username-box" type="text"></input>
             <input class="password-box" type="text"></input>
-            <input class="submit-button" type="submit"></input>
+            <input class="submit-button" type="submit" value="Đăng nhập"></input>
         </form>
         <h2>ĐĂNG NHẬP</h2>
        
