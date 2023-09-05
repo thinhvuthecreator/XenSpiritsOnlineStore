@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,5 @@ Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
 Route::get('/login',[HomeController::class,'ShowLogin']);
 Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);
+Route::post('/register',[RegisterController::class,'Register']);
+Route::get('/login',[RegisterController::class,'ShowLogin']);

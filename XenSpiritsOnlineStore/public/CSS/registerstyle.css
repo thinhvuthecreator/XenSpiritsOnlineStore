@@ -1,32 +1,64 @@
 
+.register-box,.register-box-background,form{
+    width: 400 ;
+}
+
 .register-box-background{
     position: relative;
     margin: 0 auto;
     background-color: rgb(56, 67, 78);
-    width: 600;
-    height: 700;
+    height: 500;
     top: 100;
     opacity: 80%;
 }
 .register-box{
     position: relative;
     margin: 0 auto;
-    width: 600;
-    height: 500;
+    top: -510;
     background-color: blanchedalmond;
 }
 
 form{
     position: absolute;
-    background-color: aqua;
+    top: 190;
 }
 
 ul{
     list-style: none;
 }
 ul li{
-    margin-bottom: 20;
+    margin-bottom: 10;
 }
 
+.text-input{
+   width: 270;
+   height: 30;
+   margin-left: 7%;
+}
+
+.submit-input{
+    width: 270;
+    height: 40;
+    margin-left: 7%;
+ }
+
+h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    color: white;
+    top: 130;
+    left: 34%;
+
+}
+
+p{
+    position: absolute;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color : white;
+    font-size: 14;
+    top: 510;
+    left: 23%;
+
+}
 
 
