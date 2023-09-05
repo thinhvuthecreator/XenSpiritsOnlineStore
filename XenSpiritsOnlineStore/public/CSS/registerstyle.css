@@ -1,0 +1,32 @@
+
+.register-box-background{
+    position: relative;
+    margin: 0 auto;
+    background-color: rgb(56, 67, 78);
+    width: 600;
+    height: 700;
+    top: 100;
+    opacity: 80%;
+}
+.register-box{
+    position: relative;
+    margin: 0 auto;
+    width: 600;
+    height: 500;
+    background-color: blanchedalmond;
+}
+
+form{
+    position: absolute;
+    background-color: aqua;
+}
+
+ul{
+    list-style: none;
+}
+ul li{
+    margin-bottom: 20;
+}
+
+
+
