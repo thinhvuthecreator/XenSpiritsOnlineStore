@@ -25,3 +25,6 @@ Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
 Route::get('/login',[RegisterController::class,'ShowLogin']);
+Route::get('/admin',function(){
+    return view('home_admin');
+});
