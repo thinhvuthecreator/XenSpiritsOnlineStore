@@ -13,6 +13,8 @@ class productCategorySeeder extends Seeder
      */
     public function run(): void
     {
-
+        productCategory::create([
+            'name'=> 'Accessories'
+        ]);
     }
 }
