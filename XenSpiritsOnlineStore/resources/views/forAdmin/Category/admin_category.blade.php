@@ -31,7 +31,7 @@
       <div class="container-fluid">
         <div class="row">
       <div class="col-md-12">
-        <a href="{{ route('addCategoryRoute') }}" class="btn btn-success float-right m-2">Add</a>
+        <a href="{{ route('foradmin.category.add') }}" class="btn btn-success float-right m-2">Add</a>
       </div>
      <div class="col-md-12">
         <table class="table">

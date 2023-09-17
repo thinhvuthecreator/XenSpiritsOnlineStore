@@ -8,11 +8,11 @@ class CategoryController extends Controller
 {
     public function ShowCategory()
     {
-         return view('/forAdmin/admin_category');
+         return view('forAdmin.Category.admin_category');
     }
 
     public function AddCategory()
     {
-         return 'Add Category';
+         return view('forAdmin.Category.add');
     }
 }
