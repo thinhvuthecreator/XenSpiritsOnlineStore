@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use PHPUnit\Framework\Attributes\Group;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +28,18 @@ Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
 Route::get('/login',[RegisterController::class,'ShowLogin']);
-Route::get('/admin',function(){
-    return view('forAdmin/home_admin');
-});
+Route::prefix('/admin')->group(function(){
+
+    Route::get('/',[AdminController::class, 'ShowAdmin']);
+    
+    Route::prefix('/category')->group(function(){
+        
+        Route::get('/',[CategoryController::class,'ShowCategory']);
+
+        Route::get('/add',[CategoryController::class,'AddCategory'])->name('addCategoryRoute');
+
+    });
+
+}
+);
+
