@@ -26,8 +26,8 @@
               <i class="fas fa-search fa-fw"></i>
             </button>
           </div>
-        </div>
-      </div>
+        </div>  
+      </div> 
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('foradmin.category') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Danh muc san pham

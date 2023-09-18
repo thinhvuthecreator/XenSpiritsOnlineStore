@@ -34,9 +34,10 @@ Route::prefix('/admin')->group(function(){
     
     Route::prefix('/category')->group(function(){
         
-        Route::get('/',[CategoryController::class,'ShowCategory']);
+        Route::get('/',[CategoryController::class,'ShowCategory'])->name('foradmin.category');
 
         Route::get('/add',[CategoryController::class,'AddCategory'])->name('foradmin.category.add');
+        Route::post('/add',[CategoryController::class,'AddCategoryData'])->name('foradmin.category.addData');
 
     });
 
