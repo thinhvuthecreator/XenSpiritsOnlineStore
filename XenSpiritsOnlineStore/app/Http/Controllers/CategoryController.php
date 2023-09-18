@@ -24,6 +24,6 @@ class CategoryController extends Controller
         productCategory::create([
           'name'=> $request->productCategory_input
         ]);
-        redirect(route('foradmin.category.add'));
+        return redirect(route('foradmin.category.add'));
     }
 }
