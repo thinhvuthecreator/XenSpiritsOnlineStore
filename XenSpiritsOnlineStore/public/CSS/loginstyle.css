@@ -21,14 +21,14 @@
     top: 100;
 }
 
-.login-form .username-box, .login-form .password-box{
+.login-form .email-box, .login-form .password-box{
     display: block;
     margin: 0 auto;
     margin-bottom: 10;
     margin-left: 70;
 }
 
-.username-box, .password-box{
+.email-box, .password-box{
     height: 30;
     width: 270;
     left: 80;
