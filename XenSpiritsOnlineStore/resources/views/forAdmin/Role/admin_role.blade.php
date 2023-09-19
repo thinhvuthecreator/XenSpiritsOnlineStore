@@ -20,40 +20,46 @@
         <a href="{{ route('foradmin.role.add') }}" class="btn btn-success float-right m-2">Add</a>
       </div>
      <div class="col-md-12">
-        <table class="table">
-     <thead>
-    <tr>
-      <th scope="col">Mã quyền</th>
-      <th scope="col">Tên quyền</th>
-      <th scope="col">Mô tả quyền</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-    </tr>
-    <tr>
-      <th scope="column"></th>
-      <button class="btn btn-success">Edit</button>
-      <button class="btn btn-danger">Delete</button>
-    </tr>
-  </tbody>
-        </table>
-          </div>
+       
+      <table class="table">
+         
+         <thead>
+             <tr>
+                 <th>Mã quyền</th>
+                 <th>Tên quyền</th>
+                 <th>Mô tả quyền</th>
+             </tr>
+          </thead>
+             
+          <tbody>
+             <!-- <tr>
+                 <th>1</th>
+                 <td>Mark</td>
+                 <td>Otto</td>
+             </tr>
+             <tr>
+                 <th>2</th>
+                 <td>Jacob</td>
+                 <td>Thornton</td>
+              </tr> -->
 
- 
+              @foreach($Roles as $role)
+              
+                <tr>
+                 <th>{{ $role->id }}</th>
+                 <td>{{ $role->name }}</td>
+                 <td>{{ $role->discription }}</td>
+                </tr>
+
+              @endforeach
+
+          </tbody>
+      </table>
+  
+    
+      
+        </div>
+      
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
