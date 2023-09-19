@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+
     public function ShowRole()
     {
-        return view('forAdmin.Role.admin_role');
+        $Roles = Role::all();
+        return view('forAdmin.Role.admin_role', compact('Roles'));
     }
     public function AddRole()
     {

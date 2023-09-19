@@ -20,36 +20,43 @@
         <a href="{{ route('foradmin.account.add') }}" class="btn btn-success float-right m-2">Add</a>
       </div>
      <div class="col-md-12">
-        <table class="table">
-     <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-        </table>
+     <table class="table">
+         
+         <thead>
+             <tr>
+                 <th>Mã tài khoản</th>
+                 <th>Email</th>
+                 <th>Vai trò</th>
+                 <th>Thời gian tạo</th>
+             </tr>
+          </thead>
+             
+          <tbody>
+             <!-- <tr>
+                 <th>1</th>
+                 <td>Mark</td>
+                 <td>Otto</td>
+             </tr>
+             <tr>
+                 <th>2</th>
+                 <td>Jacob</td>
+                 <td>Thornton</td>
+              </tr> -->
+
+              @foreach($Accounts as $account)
+              
+                <tr>
+                 <th>{{ $account->id }}</th>
+                 <td>{{ $account->email }}</td>
+                 <td>{{ $account->id }}</td>
+                 <td>{{ $account->created_at }}</td>
+                </tr>
+
+              @endforeach
+
+          </tbody>
+      </table>       
+
           </div>
 
  
