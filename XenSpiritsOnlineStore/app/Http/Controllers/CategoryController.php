@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function ShowCategory()
     {
-         $Categories = productCategory::all()->toQuery()->paginate(3);
+         $Categories = productCategory::all()->toQuery()->paginate(5);
          return view('forAdmin.Category.admin_category', compact('Categories'));
     }
 
@@ -31,6 +31,13 @@ class CategoryController extends Controller
 
     public function Delete()
     {
+       return "fdsfsdf";
+    }
+
+    public function Edit()
+    {
       
     }
+
+
 }
