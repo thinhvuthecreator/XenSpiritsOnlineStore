@@ -83,6 +83,8 @@ Route::prefix('/admin')->group(function(){
 
     });
 
+    // Route::get('/admin/category/',[CategoryController::class,'Delete'])->name('category.delete');
+
 }
 );
 
