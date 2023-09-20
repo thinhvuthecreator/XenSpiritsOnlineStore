@@ -10,7 +10,7 @@ class RoleController extends Controller
 
     public function ShowRole()
     {
-        $Roles = Role::all();
+        $Roles = Role::all()->toQuery()->paginate(3);
         return view('forAdmin.Role.admin_role', compact('Roles'));
     }
     public function AddRole()
