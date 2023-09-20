@@ -28,4 +28,9 @@ class CategoryController extends Controller
         ]);
         return redirect(route('foradmin.category.add'));
     }
+
+    public function Delete()
+    {
+      
+    }
 }
