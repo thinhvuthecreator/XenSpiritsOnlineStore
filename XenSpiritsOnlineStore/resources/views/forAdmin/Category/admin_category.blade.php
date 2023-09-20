@@ -32,12 +32,18 @@
     <tr>
       <th>{{ $category->id }}</th>
       <td>{{ $category->name }}</td>
-    </tr>
+      <td> 
+         <button class="btn btn-success">Edit</button>
+         <button class="btn btn-danger">Delete</button>
+      </td>
+      </tr>
     @endforeach
   </tbody>
         </table>
           </div>
-
+        <div class="col-md-12">
+          {{ $Categories->links() }}
+        </div>
  
         </div>
         <!-- /.row -->
