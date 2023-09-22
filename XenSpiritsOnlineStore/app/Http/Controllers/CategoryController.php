@@ -29,14 +29,17 @@ class CategoryController extends Controller
         return redirect(route('foradmin.category.add'));
     }
 
-    public function Delete()
+    public static function Delete($id)
     {
-       return "fdsfsdf";
+       if(productCategory::destroy($id))
+       {
+          return redirect(route('foradmin.category'));
+       }
     }
 
-    public function Edit()
+    public static function Edit($id)
     {
-      
+      return $id; 
     }
 
 
