@@ -85,7 +85,7 @@ Route::prefix('/admin')->group(function(){
 
      Route::get('category/delete/{id}',[CategoryController::class,'Delete'])->name('category.delete');
      Route::get('category/edit/{id}',[CategoryController::class,'Edit'])->name('category.edit');
-
+     Route::post('category.edit',[CategoryController::class,'EditCategoryData'])->name('category.editData');
 }
 );
 
