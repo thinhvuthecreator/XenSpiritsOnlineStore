@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function Register()
+
+    public function Register(Request $request)
     {
-       
+        dd($request->all());
     }
 
     public function ShowLogin(){

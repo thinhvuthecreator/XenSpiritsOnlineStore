@@ -52,10 +52,12 @@ class CategoryController extends Controller
     
     public function EditCategoryData(Request $request)
     {
-        //return $request->productCategory_input;
-        DB::table('product_categories')->where('name', $request->productCategory_input_readonly)->update(['name' => $request->productCategory_input]);
+        
+        $tencu = $this->xulychuoi($request->productCategory_input_readonly);
+        DB::table('product_categories')->where('name', $tencu)->update(['name' => $request->productCategory_input]);
+        return redirect(route('foradmin.category'));
 
-        return redirect()->back()->withSuccess('Cập nhật thành công');
+        
     } 
 
     
