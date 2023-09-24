@@ -12,28 +12,27 @@
     </div>
         <div class="register-box">
             <form method="POST" action="/register">
-            <ul>
-                <div>
-                <li><input class="text-input" type="text" placeholder="Email"/></li>
-                <div>
-                <div>
-                <li><input class="text-input" type="text" placeholder="Số điện thoại"/></li>
-                <div>
-                <div>
-                <li><input class="text-input" type="text" placeholder="Mật khẩu"/></li>
-                <div>
-                <div>
-                <li><input class="text-input" type="text" placeholder="Xác nhận mật khẩu"/></li>
-                <div>
-                <li><input class="text-input" type="datetime-local" placeholder="Ngày sinh"/></li>
-                <div>
-                <li><input class="text-input" type="text" placeholder="Giới tính"/></li>
-                <div>
-                <div>
-                <li><input class="submit-input" type="submit" value="ĐĂNG KÍ"/></li>
-                <div>
+        
+                
+                <input class="text-input" type="text" placeholder="Email"/>
+              
+              
+                <input class="text-input" type="text" placeholder="Số điện thoại"/>
+             
+             
+               <input class="text-input" type="password" placeholder="Mật khẩu"/>
+               
+              
+                <input class="text-input" type="password" placeholder="Xác nhận mật khẩu"/>
+             
+                <input class="text-input" type="datetime-local" placeholder="Ngày sinh"/>
+            
+               <input class="text-input" type="text" placeholder="Giới tính"/>
+              
+               
+                <input class="submit-input" type="submit" value="ĐĂNG KÍ"/>
+              
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"/>
-            </ul>
             </form>
             <h2>ĐĂNG KÍ</h2>
             <p>Đã có tài khoản ? <a href="http://localhost:8000/login" style="color:cyan">Đăng nhập</a></p>
