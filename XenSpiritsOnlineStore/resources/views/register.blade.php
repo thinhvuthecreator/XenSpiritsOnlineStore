@@ -12,27 +12,36 @@
     </div>
         <div class="register-box">
             <form method="POST" action="/register">
-        
-                
-                <input class="text-input" type="text" placeholder="Email"/>
-              
-              
-                <input class="text-input" type="text" placeholder="Số điện thoại"/>
-             
-             
-               <input class="text-input" type="password" placeholder="Mật khẩu"/>
+            <ul>
+                <li>
+                <input class="text-input" name="email_input" type="text" placeholder="Email">
+                </li>
+                <li>
+                <input class="text-input" name="phone_input" type="text" placeholder="Số điện thoại">
+                </li>
+               <li>
+                   <input class="text-input" name="password_input" type="password" placeholder="Mật khẩu">
+               </li>
                
-              
-                <input class="text-input" type="password" placeholder="Xác nhận mật khẩu"/>
-             
-                <input class="text-input" type="datetime-local" placeholder="Ngày sinh"/>
-            
-               <input class="text-input" type="text" placeholder="Giới tính"/>
-              
-               
-                <input class="submit-input" type="submit" value="ĐĂNG KÍ"/>
-              
-                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"/>
+              <li>
+                <input class="text-input" name="passwordconfirm_input" type="password" placeholder="Xác nhận mật khẩu">
+              </li>
+              <li>
+                <input class="text-input" name="dateofbirth_input" type="datetime-local" placeholder="Ngày sinh">
+              </li>
+              <li>
+               <input class="text-input" name="gender_input" type="text" placeholder="Giới tính">
+              </li>
+               <li>
+                <input class="submit-input" type="submit" value="ĐĂNG KÍ">
+              </li>
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+            </ul>
+            @if(session('success'))
+    <p class="alert alert-success">
+      {{session('success')}}
+    </p>
+  @endif
             </form>
             <h2>ĐĂNG KÍ</h2>
             <p>Đã có tài khoản ? <a href="http://localhost:8000/login" style="color:cyan">Đăng nhập</a></p>
