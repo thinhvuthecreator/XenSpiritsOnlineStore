@@ -24,7 +24,7 @@ use PHPUnit\Framework\Attributes\Group;
 */
 
 
-Route::get('/', [HomeController::class,'ShowHome']);
+Route::get('/', [HomeController::class,'ShowHome'])->name('home');
 Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::get('/products',[HomeController::class,'ShowProduct']);
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
