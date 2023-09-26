@@ -20,9 +20,7 @@ class LoginController extends Controller
             {
                return redirect(route('foradmin.admin_home'));
             }
-            else{
-               return redirect('http://localhost:8000/');
-            }
+           
          }
        }
 
