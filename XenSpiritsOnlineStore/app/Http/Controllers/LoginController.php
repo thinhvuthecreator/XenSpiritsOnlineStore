@@ -13,6 +13,7 @@ class LoginController extends Controller
 
        foreach($Accounts as $account)
        {
+         //tim cach lay ra mat khau chua bi hash
          if($request->email_input == $account->email && $request->password_input == $account->password)
          {
             if($request->email_input == "thinhvuh@gmail.com")
