@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\LoginStatus;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ class LoginController extends Controller
               // password match
                if($request->email_input == "thinhvuh@gmail.com") // email dang nhap la email quan tri vien
                   {
+                     LoginStatus::$isLogged = true;
                      return redirect(route('foradmin.admin_home')); 
                   }
                else //email dang nhap la email khach hang
