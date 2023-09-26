@@ -14,33 +14,36 @@
             <form method="POST" action="/register">
             <ul>
                 <li>
-                <input class="text-input" name="email_input" type="text" placeholder="Email">
-                </li>
-                <li>
-                <input class="text-input" name="phone_input" type="text" placeholder="Số điện thoại">
+                <input class="text-input" name="email_input" type="text" placeholder="Email" value="{{old('email_input')}}">
+                @error('email_input')
+                    <span style="color : red;">{{$message}}</span>
+                @enderror
                 </li>
                <li>
                    <input class="text-input" name="password_input" type="password" placeholder="Mật khẩu">
+                   @error('password_input')
+                    <span style="color : red;">{{$message}}</span>
+                @enderror
                </li>
                
               <li>
                 <input class="text-input" name="passwordconfirm_input" type="password" placeholder="Xác nhận mật khẩu">
-              </li>
-              <li>
-                <input class="text-input" name="dateofbirth_input" type="datetime-local" placeholder="Ngày sinh">
-              </li>
-              <li>
-               <input class="text-input" name="gender_input" type="text" placeholder="Giới tính">
+                @error('passwordconfirm_input')
+                    <span style="color : red;">{{$message}}</span>
+                @enderror
               </li>
                <li>
                 <input class="submit-input" type="submit" value="ĐĂNG KÍ">
               </li>
+              
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             </ul>
             @if(session('success'))
-    <p class="alert alert-success">
-      {{session('success')}}
-    </p>
+            <div class="successfully-Created-div">
+          
+              <span class="success-span"> {{session('success')}} </span>
+            
+            </div>
   @endif
             </form>
             <h2>ĐĂNG KÍ</h2>
