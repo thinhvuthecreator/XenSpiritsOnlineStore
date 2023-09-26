@@ -20,7 +20,7 @@ class LoginController extends Controller
             {
                return redirect(route('foradmin.admin_home'));
             }
-           
+           //con cac
          }
        }
 
