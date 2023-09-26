@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
+use App\Http\Middleware\AdminAccess;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -35,7 +36,7 @@ Route::post('/register',[RegisterController::class,'Register']);
 Route::get('/login',[RegisterController::class,'ShowLogin']);
 Route::prefix('/admin')->group(function(){
 
-    Route::get('/',[AdminController::class, 'ShowAdmin'])->name('foradmin.admin_home');
+    Route::get('/',[AdminController::class, 'ShowAdmin'])->name('foradmin.admin_home')->middleware('admin.access');
     
     Route::prefix('/category')->group(function(){
         
