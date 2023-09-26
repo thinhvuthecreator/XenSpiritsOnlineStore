@@ -56,9 +56,17 @@ p{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color : white;
     font-size: 14;
-    top: 510;
+    top: 410;
     left: 23%;
 
+}
+
+.success-span{
+    position: absolute;
+    color: rgb(88, 255, 116);
+    font-size: 16;
+    top: 200;
+    margin-left: 110;
 }
 
 
