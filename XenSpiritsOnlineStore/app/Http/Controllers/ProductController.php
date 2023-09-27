@@ -13,11 +13,17 @@ class ProductController extends Controller
     {
         return view('forAdmin.Product.admin_product');
     }
+
+    public function ShowProductClient()
+    {
+        $product_images = product::all();
+        return view('product',compact('product_images'));
+    }
+
     public function AddProduct()
     {
         $productCategories = productCategory::all();
-        $image_src = null;
-        return view('forAdmin.Product.add', compact('productCategories','image_src'));
+        return view('forAdmin.Product.add', compact('productCategories'));
     }
     public function AddProductData(Request $request)
     {
