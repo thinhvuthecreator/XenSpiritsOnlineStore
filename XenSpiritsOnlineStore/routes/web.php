@@ -30,15 +30,14 @@ Route::get('/', [HomeController::class,'ShowHome'])->name('home');
 Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::get('/products',[HomeController::class,'ShowProduct']);
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
-Route::get('/login',[LoginController::class,'ShowLogin']);
+Route::get('/login',[LoginController::class,'ShowLogin'])->name('login');
 Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
-Route::get('/login',[RegisterController::class,'ShowLogin']);
 Route::prefix('/admin')->group(function(){
 
     Route::get('/',[AdminController::class, 'ShowAdmin'])->name('foradmin.admin_home')->middleware('admin.access');
-    
+    Route::get('/logout',[AdminController::class,'LogOut'])->name('foradmin.admin_logout');
     Route::prefix('/category')->group(function(){
         
         Route::get('/',[CategoryController::class,'ShowCategory'])->name('foradmin.category');
