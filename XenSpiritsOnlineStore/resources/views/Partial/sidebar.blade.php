@@ -14,6 +14,10 @@
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
+        <div>
+          <br>
+          <a href="/login">Đăng xuất</a>
+        </div>
       </div>
 
       <!-- SidebarSearch Form -->

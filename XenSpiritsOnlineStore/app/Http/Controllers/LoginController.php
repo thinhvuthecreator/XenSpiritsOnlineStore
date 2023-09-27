@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\LoginStatus;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
 use Illuminate\Http\Request;
@@ -23,7 +22,9 @@ class LoginController extends Controller
               // password match
                if($request->email_input == "thinhvuh@gmail.com") // email dang nhap la email quan tri vien
                   {
-                     LoginStatus::$isLogged = true;
+                     session_start();
+                     $_SESSION['adminlogin'] = "AdminLogged";
+
                      return redirect(route('foradmin.admin_home')); 
                   }
                else //email dang nhap la email khach hang
@@ -37,8 +38,16 @@ class LoginController extends Controller
        return redirect('http://localhost:8000/login')->withSuccess('Email hoặc mật khẩu không chính xác');
     }
 
+    public function ShowLogin()
+    {
+      
+       $_SESSION["adminlogin"] = "AdminNotLogged";
+       return view('login');
+    }
+
     public function ShowRegister()
     {
+      
        return view('register');
     }
 }

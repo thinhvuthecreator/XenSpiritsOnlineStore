@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Middleware;
-
-use App\Models\LoginStatus;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminAccess
 {
+
     /**
      * Handle an incoming request.
      *
@@ -16,7 +15,9 @@ class AdminAccess
      */
     public function handle(Request $request, Closure $next): Response
     {  
-        if(LoginStatus::$isLogged != true)
+        session_start();
+
+        if(!isset($_SESSION["adminlogin"]) || ($_SESSION["adminlogin"] != "AdminLogged"))
         {
             return redirect('/login');
         }
