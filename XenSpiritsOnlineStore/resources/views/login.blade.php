@@ -1,3 +1,5 @@
+@session_start();
+
 <head>
       <title>Xen. Spirits® | Login</title>
       <link rel="stylesheet" href="{{asset('CSS/loginstyle.css')}}">
