@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\productCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -12,7 +13,9 @@ class ProductController extends Controller
     }
     public function AddProduct()
     {
-        return view('forAdmin.Product.add');
+        $productCategories = productCategory::all();
+        $image_src = null;
+        return view('forAdmin.Product.add', compact('productCategories','image_src'));
     }
     public function AddProductData()
     {
