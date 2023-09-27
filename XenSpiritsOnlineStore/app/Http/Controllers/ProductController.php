@@ -21,10 +21,28 @@ class ProductController extends Controller
     }
     public function AddProductData(Request $request)
     {
-        //$tenmoi = UsefulTool::xulychuoi( $request->product_name_input);
-
+        // lay ra id cua loai san pham
         $product_category_id = DB::table('product_categories')->where('name', $request->product_category_input)->value('id');
+        //$tenmoi = UsefulTool::xulychuoi( $request->product_name_input);
+        
+        $rules = [
+            'product_name_input' => 'required',
+            'product_image_input' => 'required|image',
+            'product_price_input' => 'required|numeric|min:0',
+            'product_quantity_input' => 'required|numeric|min:1',
+            'product_description_input' => 'nullable'
+        ];
+        $messages = [
+            'required' => 'Trường này không được để trống',
+            'image' => 'Đây không phải là file ảnh ! Vui lòng chọn file ảnh',
+            'numeric' => 'Vui lòng nhập số',
+            'product_price_input.min' => 'Giá sản phẩm không thể âm',
+            'product_quantity_input.min' => 'Số lượng sản phẩm tối thiểu là 1'
 
+        ];
+        $request->validate($rules,$messages);
+        
+        
         product::create([
             'name' => $request->product_name_input,
             'productCategory_id' =>  $product_category_id,
@@ -35,7 +53,7 @@ class ProductController extends Controller
         ]);
 
         $image = $request->file('product_image_input');
-        $storedPath = $image->move('Resource', $image->getClientOriginalName());
+        $storedPath = $image->move('Resource/product_Images', $image->getClientOriginalName());
         
         return redirect(route('foradmin.product.add'));
         // return $request->file('product_image_input')->getClientOriginalName();

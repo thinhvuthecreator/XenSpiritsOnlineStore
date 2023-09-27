@@ -22,16 +22,27 @@
     <div class="form-group">
     <label for="productCategory">Product</label>
     <input type="text" name="product_name_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product category"> 
+      @error('product_name_input')
+                    <span style="color : red;">{{$message}}</span>
+      @enderror
     <select name="product_category_input" class="form-control" id="productcategory" aria-describedby="productCategory">
       @foreach($productCategories as $productCategory)
       <option>{{$productCategory->name}}</option>
       @endforeach
     </select>
     <input type="file" name="product_image_input" class="form-control" id="product_image_input" aria-describedby="productCategory" placeholder="Add product image">
+     @error('product_image_input')
+                    <span style="color : red;">{{$message}}</span>
+      @enderror
     <input type="text" name="product_price_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product price">
+    @error('product_price_input')
+                    <span style="color : red;">{{$message}}</span>
+      @enderror
     <input type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product quantity">
+    @error('product_quantity_input')
+                    <span style="color : red;">{{$message}}</span>
+      @enderror
     <input type="text" name="product_description_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Add product description">
-      
 
   </div>
   <button type="submit" class="btn btn-primary">Add</button>
