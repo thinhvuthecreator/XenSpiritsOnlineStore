@@ -15,7 +15,9 @@ class AdminAccess
      */
     public function handle(Request $request, Closure $next): Response
     {  
+        if (session_status() == PHP_SESSION_NONE) {
         session_start();
+        }
 
         if(!isset($_SESSION["adminlogin"]) || ($_SESSION["adminlogin"] != "AdminLogged"))
         {

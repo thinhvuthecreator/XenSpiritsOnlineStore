@@ -22,7 +22,9 @@ class LoginController extends Controller
               // password match
                if($request->email_input == "thinhvuh@gmail.com") // email dang nhap la email quan tri vien
                   {
-                     session_start();
+                     if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                      }
                      $_SESSION['adminlogin'] = "AdminLogged";
 
                      return redirect(route('foradmin.admin_home')); 
@@ -40,8 +42,6 @@ class LoginController extends Controller
 
     public function ShowLogin()
     {
-      
-       $_SESSION["adminlogin"] = "AdminNotLogged";
        return view('login');
     }
 
