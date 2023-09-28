@@ -11,6 +11,7 @@ html{
     position: fixed;
     top: -3;
     z-index: 1;
+
 }
 
 .navigator-header{
@@ -50,16 +51,17 @@ html{
 
 }
 
-.XenLogo{
+.XenLogo1,.XenLogo2{
     background-color: black;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 120px;
     position: absolute;
-    left: 850px;
+    margin-top: 3;
+    left: 793px;
 }
 
 
-.OnTopHomePage img:hover,.OnTopHomePage img :active{
+.OnTopHomePage .XenLogo1:hover,.OnTopHomePage .XenLogo1 :active{
     visibility: hidden;
 }
 hr{
