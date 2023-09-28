@@ -35,7 +35,7 @@
       <header class="mainImageHome">
         <div class="aoVaTenSanPham">
           <div class="mainImageHome1-container">
-          <img class="mainImageHome1" src="{{asset('Resource/sample1.png')}}">
+          <a href="/products"><img class="mainImageHome1" src="{{asset('Resource/sample1.png')}}"></a>
           <p class="product-title">Xem sản phẩm</p>
           </img>
           </div>

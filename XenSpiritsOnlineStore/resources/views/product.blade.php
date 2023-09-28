@@ -9,6 +9,7 @@
     <br><br>
     <div class="filter">
     </div>
+    <br><br>
     <table>
         <tr>
           @foreach($products as $product)

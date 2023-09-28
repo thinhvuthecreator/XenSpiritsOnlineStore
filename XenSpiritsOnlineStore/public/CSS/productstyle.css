@@ -1,6 +1,6 @@
 div.filter{
-    height: 50;
-    background-color:  white;
+    height: 70;
+    background-color:  rgb(49, 49, 49);
     margin-bottom: 5;
 }
 
@@ -8,25 +8,26 @@ table{
     margin-left: -30;
 }
 
+table td{
+    display: inline-block;
+}
+
 div.container{
     margin-left: 30;
 }
 
 div.background{
-    background: black;
+    background: white;
     position: relative;
 }
 
 img{
-    width: 400;
-    height: 450;
+    width: 370;
+    height: 420;
     position: inherit;
+    margin-left: 20;
+    margin-bottom: 50;
 }
-
-p{
-    color: white;
-}
-
 
 .item-title{
     top: 90%;
@@ -36,7 +37,7 @@ p{
     margin-right: auto;
     left: 0;
     right: 0;
-    color: white;
+    color: rgb(0, 255, 179);
     opacity: 0;
     transition: all .2s;
 }
@@ -50,5 +51,5 @@ div.container .background img:active{
 div.container .background:hover p,
 div.container .background:active p{
     opacity: 1;
-    top: 40%;
+    top: 37%;
 }

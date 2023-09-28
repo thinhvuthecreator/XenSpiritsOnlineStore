@@ -1,3 +1,7 @@
+html{
+    background-image: url('/Resource/htmlbackground.png');
+    background-attachment: fixed;
+}
 .login-box{
     position: relative;
     width: 400;
