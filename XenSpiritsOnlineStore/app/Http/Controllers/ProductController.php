@@ -11,13 +11,19 @@ class ProductController extends Controller
 {
     public function ShowProduct()
     {
-        return view('forAdmin.Product.admin_product');
+        $products = product::all();
+        return view('forAdmin.Product.admin_product',compact('products'));
     }
 
     public function ShowProductClient()
     {
         $products = product::all();
         return view('product',compact('products'));
+    }
+
+    public function ShowProductDetail()
+    {
+        return view('product_detail');
     }
 
     public function AddProduct()

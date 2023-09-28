@@ -28,7 +28,10 @@ use PHPUnit\Framework\Attributes\Group;
 
 Route::get('/', [HomeController::class,'ShowHome'])->name('home');
 Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
-Route::get('/products',[ProductController::class,'ShowProductClient']);
+Route::prefix('/products')->group(function(){
+    Route::get('/',[ProductController::class,'ShowProductClient']);
+    Route::get('/detail',[ProductController::class,'ShowProductDetail']);
+});
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('login');
 Route::post('/login',[LoginController::class,'Login']);
