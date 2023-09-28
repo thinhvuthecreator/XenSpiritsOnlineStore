@@ -23,31 +23,38 @@
         <table class="table">
      <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Mã sản phẩm</th>
+      <th scope="col">Loại sản phẩm</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Giá sản phẩm</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Mô tả sản phẩm</th>
+      <th scope="col">Ngày thêm</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($products as $product)
+    
+       @php
+       $category_name = DB::table('product_categories')->where('id', $product->productCategory_id)->value('name')
+       @endphp
+
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+      <td> {{ $product->id }}</td>
+      <td> {{ $category_name }}</td>
+      <td> {{ $product->name }}</td>
+      <td> {{ $product->price }}</td>
+      <td> {{ $product->quantity }}</td>
+      <td> {{ $product->productDescription }}</td>
+      <td> {{ $product->created_at }}</td>
+      <td> 
+        <a href="#" class="btn btn-success">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>  
+
+    @endforeach
   </tbody>
         </table>
           </div>

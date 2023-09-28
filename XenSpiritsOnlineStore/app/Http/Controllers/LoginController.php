@@ -31,7 +31,12 @@ class LoginController extends Controller
                   }
                else //email dang nhap la email khach hang
                   {
-                        return redirect(route('home'));        
+                     if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                      }
+                     $_SESSION['clientlogin'] = "ClientLogged";
+                        return redirect(route('home'));  
+                      
                   }
             }
          }
