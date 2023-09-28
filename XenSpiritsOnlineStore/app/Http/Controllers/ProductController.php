@@ -16,8 +16,8 @@ class ProductController extends Controller
 
     public function ShowProductClient()
     {
-        $product_images = product::all();
-        return view('product',compact('product_images'));
+        $products = product::all();
+        return view('product',compact('products'));
     }
 
     public function AddProduct()
@@ -48,11 +48,12 @@ class ProductController extends Controller
         ];
         $request->validate($rules,$messages);
         
-        
+        $image_original_name = $request->file('product_image_input')->getClientOriginalName();
+
         product::create([
             'name' => $request->product_name_input,
             'productCategory_id' =>  $product_category_id,
-            'mainImage' => $request->product_image_input,
+            'mainImage' => $image_original_name,
             'quantity' => $request->product_quantity_input,
             'productDescription' => $request->product_description_input,
             'price' => $request->product_price_input

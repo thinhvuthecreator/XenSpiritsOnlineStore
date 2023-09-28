@@ -4,12 +4,12 @@
 <body>
 <div class="OnTopHomePage">
       <h1 class="XenTopPage">XEN.SPIRITS ®</h1>
-      <img class="XenLogo" 
-           src="{{asset('Resource/xen-logo-top-1.png')}}"
+      <img class="XenLogo2" 
+           src="{{asset('Resource/xen-box-logo2.png')}}"
            alt="img">
       </img> 
-      <img class="XenLogo" 
-           src="{{asset('Resource/xen-logo-top.png')}}"
+      <img class="XenLogo1" 
+           src="{{asset('Resource/xen-box-logo.png')}}"
            alt="img">
       </img>
       
