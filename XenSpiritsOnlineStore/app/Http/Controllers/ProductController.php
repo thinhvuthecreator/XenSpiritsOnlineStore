@@ -21,9 +21,13 @@ class ProductController extends Controller
         return view('product',compact('products'));
     }
 
-    public function ShowProductDetail()
+    public function ShowProductDetail($id)
     {
-        return view('product_detail');
+        $product_selected = DB::table('products')->where('id', $id)->first(); // lay ra san pham duoc chon
+        $product_selected_Category_id =  DB::table('products')->where('id', $id)->value('productCategory_id'); // lay ra ma loai sp dc chon
+        $product_category_name = DB::table('product_categories')->where('id', $product_selected_Category_id)->value('name'); // lay ra ten cua ma loai san pham dc chon
+        return view('product_detail',compact(['product_selected','product_category_name']));
+   
     }
 
     public function AddProduct()

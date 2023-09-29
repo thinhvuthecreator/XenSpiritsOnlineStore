@@ -14,7 +14,7 @@
           <td> 
             <div class="container">
                 <div class="background">
-                <a href="/products/detail"><image class="product_img" src="Resource/product_Images/{{$product->mainImage}}" alt="ảnh sản phẩm"></a>
+                <a href="{{ route('product_detail_client',['id' => $product->id]) }}"><image class="product_img" src="Resource/product_Images/{{$product->mainImage}}" alt="ảnh sản phẩm"></a>
                 <p class="item-title">{{ $product->name }}</p>
                 </image>
                 </div>
