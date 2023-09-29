@@ -16,7 +16,7 @@ div.background{
     position: relative;
 }
 
-img{
+.product_img{
     width: 370;
     height: 420;
     position: inherit;
