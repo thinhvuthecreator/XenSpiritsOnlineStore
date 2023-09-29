@@ -14,7 +14,7 @@
           <td> 
             <div class="container">
                 <div class="background">
-                <image src="Resource/product_Images/{{$product->mainImage}}" alt="ảnh sản phẩm">
+                <a href="/products/detail"><image class="product_img" src="Resource/product_Images/{{$product->mainImage}}" alt="ảnh sản phẩm"></a>
                 <p class="item-title">{{ $product->name }}</p>
                 </image>
                 </div>
