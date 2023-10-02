@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\detailProductImage;
 use App\Models\product;
 use App\Models\productCategory;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,8 +29,10 @@ class ProductController extends Controller
         $product_selected = DB::table('products')->where('id', $id)->first(); // lay ra san pham duoc chon
         $product_selected_Category_id =  DB::table('products')->where('id', $id)->value('productCategory_id'); // lay ra ma loai sp dc chon
         $product_category_name = DB::table('product_categories')->where('id', $product_selected_Category_id)->value('name'); // lay ra ten cua ma loai san pham dc chon
-        return view('product_detail',compact(['product_selected','product_category_name']));
-   
+        $product_detail_images = DB::table('detail_product_images')->where('product_id', $id)->pluck('name'); // lay ra anh chi tiet san pham;
+        
+        return view('product_detail',compact(['product_selected','product_category_name','product_detail_images']));
+
     }
 
     public function AddProduct()
@@ -40,11 +44,11 @@ class ProductController extends Controller
     {
         // lay ra id cua loai san pham
         $product_category_id = DB::table('product_categories')->where('name', $request->product_category_input)->value('id');
-        //$tenmoi = UsefulTool::xulychuoi( $request->product_name_input);
         
         $rules = [
             'product_name_input' => 'required',
             'product_image_input' => 'required|image',
+
             'product_price_input' => 'required|numeric|min:0',
             'product_quantity_input' => 'required|numeric|min:1',
             'product_description_input' => 'nullable'
@@ -73,9 +77,37 @@ class ProductController extends Controller
         $image = $request->file('product_image_input');
         $storedPath = $image->move('Resource/product_Images', $image->getClientOriginalName());
         
+         //tạo phần ảnh chi tiết sản phẩm sau khi tạo sản phẩm
+        $this->add_detail_image($request);
         return redirect(route('foradmin.product.add'));
-        // return $request->file('product_image_input')->getClientOriginalName();
     }
+
+    //ham them anh chi tiet san pham
+    public function add_detail_image($request)
+    {
+
+        //lay ra product id de them vao anh chi tiet
+        $lastest_product = DB::table('products')->latest('created_at')->first();
+        $product_ID = $lastest_product->id;
+        
+        $images = array();
+        if($files=$request->file('product_detail_image_input')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('Resource/product_Images/detail_Images',$name);
+                $images[] = $name;
+
+                detailProductImage::create([
+                    'name'=> $name,
+                    'product_id' => $product_ID
+                ]);
+             }
+        }  
+    }
+
+            
+
+      
         
 
 
