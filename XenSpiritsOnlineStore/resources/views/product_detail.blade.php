@@ -10,10 +10,15 @@
     <br><br>
     <div class="container">
         <div class="product-images">
-            <image class="product_img" src="https://ithk-pro-itmall-item.oss-cn-hongkong.aliyuncs.com/2/product/0ZXLJM140058LGRX/0ZXLJM140058LGRX-pdp-1.jpg?x-oss-process=image/resize,m_pad,h_750,w_600/auto-orient,1/quality,Q_80">
-            <image class="product_img" src="https://ithk-pro-itmall-item.oss-cn-hongkong.aliyuncs.com/2/product/0ZXLJM140058LGRX/0ZXLJM140058LGRX-pdp-2.jpg?x-oss-process=image/resize,m_pad,h_750,w_600/auto-orient,1/quality,Q_80">
-            <image class="product_img" src="https://ithk-pro-itmall-item.oss-cn-hongkong.aliyuncs.com/2/product/0ZXLJM140058LGRX/0ZXLJM140058LGRX-pdp-3.jpg?x-oss-process=image/resize,m_pad,h_750,w_600/auto-orient,1/quality,Q_80">
-            <image class="product_img" src="https://ithk-pro-itmall-item.oss-cn-hongkong.aliyuncs.com/2/product/0ZXLJM140058LGRX/0ZXLJM140058LGRX-pdp-4.jpg?x-oss-process=image/resize,m_pad,h_750,w_600/auto-orient,1/quality,Q_80">
+            <br> <br> <br>
+            <image class="product_img" src="/Resource/product_Images/{{ $product_selected->mainImage }}">
+
+            @if($product_detail_images != null)
+            @foreach($product_detail_images as $detail_image)
+            <image class="product_img" src="/Resource/product_Images/detail_Images/{{$detail_image}}">
+            @endforeach
+            @endif
+
         </div>
         <div class="product-detail">
         <div class="detail-content">
