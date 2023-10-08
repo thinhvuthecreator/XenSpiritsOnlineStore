@@ -7,6 +7,11 @@
 
 
 @section('Content')
+
+<style></style>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     @include('./Partial/content_header', ['url1' => 'Add Product' , 'url2' => 'Product', 'url3' => 'Add'])
@@ -33,18 +38,40 @@
       @endforeach
     </select>
     <label style="margin-bottom : -2px">Ảnh dại diện sản phẩm</label>
-    <input type="file" name="product_image_input" class="form-control" id="product_image_input" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chính của sản phẩm">
-     @error('product_image_input')
+    <input onchange="loadFile(event)" type="file" id="image_upload" name="product_image_input" class="form-control" id="product_image_input" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chính của sản phẩm">
+    <div id="upload_image" style="display:none">
+        <div class="display_upload">
+          <image id="image_uploaded" style="width: 400px; height: 480px;">
+        </div>
+    </div>
+    @error('product_image_input')
                     <span style="color : red;">{{$message}}</span><br>
-      @enderror
+    @enderror
+
+    <script>
+      $(document).ready(function(){
+          $('#image_upload').on('change',function(){
+            var reader = new FileReader();
+            reader.onload = function(event){
+              var image_uploaded = document.getElementById('image_uploaded');
+              image_uploaded.src = reader.result;
+
+              image_uploaded.onload = function() {
+              URL.revokeObjectURL(image_uploaded.src) // free memory
+              }
+            };
+            reader.readAsDataURL(event.target.files[0]);
+
+            $('#upload_image').show();
+          });    
+      });     
+    </script>
     
      <!-- ------------------Đây là phần chi tiết sản phẩm---------------------->
       
     <label style="margin-bottom : -2px">Ảnh chi tiết sản phẩm</label>
-    <input type="file" name="product_detail_image_input[]" class="form-control" id="product__detail_image_input" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chi tiết của sản phẩm" multiple>
-     @error('product_detail_image_input[]')
-                    <span style="color : red;">{{$message}}</span><br>
-      @enderror
+    <input type="file" id="detail_image_upload" name="product_detail_image_input[]" class="form-control" id="product__detail_image_input" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chi tiết của sản phẩm" multiple>
+     
 
      <!------------------------------------------------------------------------>
 
