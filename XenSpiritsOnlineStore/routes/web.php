@@ -54,7 +54,8 @@ Route::prefix('/admin')->group(function(){
         Route::get('/',[ProductController::class,'ShowProduct'])->name('foradmin.product');
         Route::get('/add',[ProductController::class,'AddProduct'])->name('foradmin.product.add');
         Route::post('/add',[ProductController::class,'AddProductData'])->name('foradmin.product.addData');
-
+        Route::get('/edit/{id}',[ProductController::class,'EditProduct'])->name('foradmin.product.edit');
+        Route::post('/edit',[ProductController::class,'EditProductData'])->name('foradmin.product.editData');
     });
 
     Route::prefix('/staff')->group(function(){

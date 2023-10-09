@@ -22,12 +22,12 @@
       <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
- <form method="POST" action="{{ route('foradmin.product.addData') }}" enctype="multipart/form-data">
+ <form method="POST" action="{{ route('foradmin.product.editData') }}" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
     <br>
     <label style="margin-bottom : -2px">Tên sản phẩm</label>
-    <input type="text" name="product_name_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product category">
+    <input value="{{ $product->name }}" type="text" name="product_name_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product category">
       @error('product_name_input')
                     <span style="color : red;">{{$message}}</span><br>
       @enderror
@@ -38,11 +38,11 @@
       @endforeach
     </select>
     <label style="margin-bottom : -2px">Ảnh dại diện sản phẩm</label>
-    <input onchange="loadFile(event)" type="file" id="image_upload" name="product_image_input" class="form-control" id="product_image_input" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chính của sản phẩm">
-    <p id="pSpace" style="display:none"></p>
-    <div id="upload_image" style="display:none">
+    <input onchange="loadFile(event)" type="file" id="image_upload" name="product_image_input" class="form-control" id="product_image_input" aria-describedby="productCategory" placeholder="Add product image">
+    <p id="pSpace"></p>
+    <div id="upload_image">
         <div class="display_upload">
-          <image id="image_uploaded" style="width: 400px; height: 480px; border: 1px solid black">
+          <image src="/Resource/product_Images/{{$product->mainImage}}" id="image_uploaded" style="width: 400px; height: 480px; border: 1px solid black">
         </div>
     </div>
     @error('product_image_input')
@@ -63,8 +63,6 @@
             };
             reader.readAsDataURL(event.target.files[0]);
 
-            $('#upload_image').show();
-            $('#pSpace').show();
           });
       });
     </script>
@@ -116,20 +114,20 @@
      <!------------------------------------------------------------------------>
 
     <label style="margin-bottom : -2px">Giá sản phẩm</label>
-    <input type="text" name="product_price_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product price">
+    <input type="text" name="product_price_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product price" value="{{$product->price}}">
     @error('product_price_input')
                     <span style="color : red;">{{$message}}</span><br>
       @enderror
       <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
-    <input type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product quantity">
+    <input value="{{$product->quantity}}" type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product quantity">
     @error('product_quantity_input')
                     <span style="color : red;">{{$message}}</span><br>
       @enderror
       <label style="margin-bottom : -2px">Miêu tả sản phẩm</label>
-    <input type="text" name="product_description_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Add product description">
+    <input value="{{$product->productDescription}}" type="text" name="product_description_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Add product description">
 
   </div>
-  <button type="submit" class="btn btn-primary">Add</button>
+  <button type="submit" class="btn btn-primary">Cập nhật</button>
  </form>
         </div>
 
