@@ -40,6 +40,18 @@ class ProductController extends Controller
         $productCategories = productCategory::all();
         return view('forAdmin.Product.add', compact('productCategories'));
     }
+
+    public function EditProduct($id)
+    {
+       $productCategories = productCategory::all();
+       $product = DB::table('products')->where('id',$id)->first();
+       return view('forAdmin.Product.edit',compact('productCategories','product'));
+    }
+
+    public function EditProductData(Request $request)
+    {
+      return "we gonna edit this product !!";
+    }
     public function AddProductData(Request $request)
     {
         // lay ra id cua loai san pham
