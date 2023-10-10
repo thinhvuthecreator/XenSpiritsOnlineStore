@@ -73,6 +73,15 @@
     <input type="file" id="detail_image_upload" name="product_detail_image_input[]" class="form-control" aria-describedby="productCategory" placeholder="Add product image" value="Ảnh chi tiết của sản phẩm" multiple>
     <div>
     <div id ="gallery" ></div>
+     @if($detail_images != null)
+     
+      @foreach($detail_images as $detail_image)
+      
+        <img src="/Resource/product_Images/detail_Images/{{$detail_image}}" style="display:flex; border: 1px solid black; width:400px;height:480px; margin-top:5px;margin-bottom:5px;margin-right:8px;">
+
+      @endforeach
+
+     @endif
     </div>
     <script>
       $(function(){
@@ -80,7 +89,7 @@
         // var input = document.getElementById('#detail_image_upload');
         // var placeToInsertImagePreview = document.getElementById('#gallery');
 
-        // hàm preview hình sau khi thêm
+      // hàm preview hình sau khi thêm
       var imagesPreview = function(input, placeToInsertImagePreview) {
 
          if (input.files) {
@@ -99,18 +108,8 @@
           }
       }
         
-      // hàm load hình chi tiết
-      var imagesLoad = function(){
-
-      }
-       
-
         $('#detail_image_upload').on('change', function() {
                imagesPreview(this, $('#gallery'));
-             });
-        
-        $(window).load(function() {
-               imagesLoad();
              });     
       
       });
