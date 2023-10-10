@@ -22,7 +22,7 @@
       <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
- <form method="POST" action="{{ route('foradmin.product.editData') }}" enctype="multipart/form-data">
+ <form method="POST" action="{{ route('foradmin.product.editData',['id'=>$product->id]) }}" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
     <br>
