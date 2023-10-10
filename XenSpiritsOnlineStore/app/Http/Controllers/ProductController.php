@@ -48,9 +48,58 @@ class ProductController extends Controller
        return view('forAdmin.Product.edit',compact('productCategories','product'));
     }
 
-    public function EditProductData(Request $request)
+    public function EditProductData(Request $request,$id)
     {
-      return "we gonna edit this product !!";
+        $product_category_id = DB::table('product_categories')->where('name', $request->product_category_input)->value('id');
+        //validate san pham ( giong voi luc them san pham)
+        $rules = [
+            'product_name_input' => 'required',
+
+            'product_price_input' => 'required|numeric|min:0',
+            'product_quantity_input' => 'required|numeric|min:1',
+            'product_description_input' => 'nullable'
+        ];
+        $messages = [
+            'required' => 'Trường này không được để trống',
+            'image' => 'Đây không phải là file ảnh ! Vui lòng chọn file ảnh',
+            'numeric' => 'Vui lòng nhập số',
+            'product_price_input.min' => 'Giá sản phẩm không thể âm',
+            'product_quantity_input.min' => 'Số lượng sản phẩm tối thiểu là 1'
+
+        ];
+        $request->validate($rules,$messages);
+  
+        $category_id =  DB::table('product_categories')->where('name',$request->product_category_input)->value('id');
+        $img = '';
+        if($request->product_image_input == null)
+        {
+          $img = DB::table('products')->where('id',$id)->value('mainImage');
+          
+        }
+        else
+        {
+          $img = $request->product_image_input->getClientOriginalName();
+        }
+        DB::table('products')->where('id', $id)->update(
+           ['name' => $request->product_name_input, 
+            'productCategory_id' => $category_id, 
+            'mainImage' => $img,
+            'price' => $request->product_price_input,
+            'quantity' => $request->product_quantity_input,
+            'productDescription' => $request->product_description_input]);
+
+
+        if($image = $request->file('product_image_input'))
+        {
+        $storedPath = $image->move('Resource/product_Images', $img);
+        }
+        if($request->file('product_detail_image_input'))    
+        {
+        $this->update_detail_image($request,$id);
+        }
+        return redirect(route('foradmin.product'));
+       
+
     }
     public function AddProductData(Request $request)
     {
@@ -112,6 +161,28 @@ class ProductController extends Controller
                 detailProductImage::create([
                     'name'=> $name,
                     'product_id' => $product_ID
+                ]);
+             }
+        }  
+    }
+
+    public function update_detail_image($request,$id)
+    {
+
+        //lay ra product id de them vao anh chi tiet
+        $current_product = DB::table('products')->where('id',$id)->first();
+        //$id duoc truyen vao la id cua product hien tai
+
+        $images = array();
+        if($files=$request->file('product_detail_image_input')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('Resource/product_Images/detail_Images',$name);
+                $images[] = $name;
+
+                detailProductImage::create([
+                    'name'=> $name,
+                    'product_id' => $id
                 ]);
              }
         }  
