@@ -50,9 +50,7 @@
       </table>
         </div>
 
-        <div class="col-md-12">
-          {{ $Roles->links() }}
-        </div>
+       
       
         </div>
         <!-- /.row -->

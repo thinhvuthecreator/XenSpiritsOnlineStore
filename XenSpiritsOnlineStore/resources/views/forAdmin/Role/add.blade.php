@@ -22,7 +22,17 @@
     <div class="form-group">
     <label for="role">Role</label>
     <input type="text" name="Role_input" class="form-control" id="role" aria-describedby="role" placeholder="Enter role">
-    </div>
+    @error('Role_input')
+         <span style="color : red;">{{$message}}</span><br>
+    @enderror
+  </div>
+    <div class="form-group">
+    <label for="role">Discription</label>
+    <input type="text" name="Discription_input" class="form-control" id="role" aria-describedby="role" placeholder="Enter Discription">
+    @error('Discription_input')
+                    <span style="color : red;">{{$message}}</span><br>
+    @enderror
+  </div>
   <button type="submit" class="btn btn-primary">Add</button>
  </form>
         </div>

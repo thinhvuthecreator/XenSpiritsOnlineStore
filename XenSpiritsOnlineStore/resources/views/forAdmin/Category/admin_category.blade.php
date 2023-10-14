@@ -41,9 +41,7 @@
   </tbody>
         </table>
           </div>
-        <div class="col-md-12">
-          {{ $Categories->links() }}
-        </div>
+      
  
         </div>
         <!-- /.row -->
