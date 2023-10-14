@@ -45,7 +45,8 @@ class ProductController extends Controller
     {
        $productCategories = productCategory::all();
        $product = DB::table('products')->where('id',$id)->first();
-       return view('forAdmin.Product.edit',compact('productCategories','product'));
+       $detail_images = DB::table('detail_product_images')->where('product_id',$id)->pluck('name');
+       return view('forAdmin.Product.edit',compact('productCategories','product','detail_images'));
     }
 
     public function EditProductData(Request $request,$id)

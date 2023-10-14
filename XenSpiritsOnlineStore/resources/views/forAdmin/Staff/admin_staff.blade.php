@@ -23,31 +23,25 @@
         <table class="table">
      <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Mã nhân viên</th>
+      <th scope="col">Tên</th>
+      <th scope="col">Số điện thoại</th>
+      <th scope="col">Ngày sinh</th>
+      <th scope="col">Căn cước công dân</th>
+      <th scope="col">Ngày thêm</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($staffs as $staff)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{ staff->id }}</td>
+      <td>{{ staff->name }}</td>
+      <td>{{ staff->phone }}</td>
+      <td>{{ staff->date_of_birth}}</td>
+      <td>{{ staff->citizen_id }}</td>
+      <td>{{ staff->created_at }}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
         </table>
           </div>
