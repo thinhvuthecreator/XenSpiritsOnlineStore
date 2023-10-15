@@ -70,7 +70,7 @@
 
     <label style="margin-bottom : -2px">Số điện thoại</label>
     <input type="text" name="phone_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product price">
-    @error('phone_input')
+     @error('phone_input')
                     <span style="color : red;">{{$message}}</span><br>
       @enderror
       <label style="margin-bottom : -2px">Căn cước công dân</label>

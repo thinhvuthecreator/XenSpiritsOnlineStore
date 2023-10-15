@@ -13,6 +13,7 @@ class Staff extends Model
         'date_of_birth',
         'citizen_id',
         'phone',
-        'account_id'
+        'account_id',
+        'image'
     ];
 }

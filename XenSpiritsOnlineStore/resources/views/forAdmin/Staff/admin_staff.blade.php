@@ -34,12 +34,12 @@
   <tbody>
     @foreach($staffs as $staff)
     <tr>
-      <td>{{ staff->id }}</td>
-      <td>{{ staff->name }}</td>
-      <td>{{ staff->phone }}</td>
-      <td>{{ staff->date_of_birth}}</td>
-      <td>{{ staff->citizen_id }}</td>
-      <td>{{ staff->created_at }}</td>
+      <td>{{ $staff->id }}</td>
+      <td>{{ $staff->full_name }}</td>
+      <td>{{ $staff->phone }}</td>
+      <td>{{ $staff->date_of_birth}}</td>
+      <td>{{ $staff->citizen_id }}</td>
+      <td>{{ $staff->created_at }}</td>
     </tr>
     @endforeach
   </tbody>
