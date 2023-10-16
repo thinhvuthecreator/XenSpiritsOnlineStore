@@ -43,12 +43,23 @@ class AccountController extends Controller
 
         return redirect()->back();
     }
-    public function EditAccount()
+    public function EditAccount($id)
     {
-        
+        $roles = Role::all();
+        $current_email = DB::table('accounts')->where('id',$id)->value('email'); 
+        $current_role_id = DB::table('accounts')->where('id',$id)->value('role_id');
+        $current_owner_id = DB::table('accounts')->where('id',$id)->value('staff_id');
+        $current_role_name = DB::table('roles')->where('id',$current_role_id)->value('name'); 
+        $account_owner_name = DB::table('staff')->where('id',$current_owner_id)->value('full_name');
+        return view('forAdmin.Account.edit',compact('current_role_id','account_owner_name','roles','current_email','current_role_name'));
     }
-    public function EditAccountData()
+    public function EditAccountData(Request $request)
     {
-        
+        $role_id = DB::table('roles')->where('name', $request->role_input)->value('id');
+        DB::table('accounts')->where('email',$request->current_email_input)->update([
+            'role_id' => $role_id
+        ]
+        );
+        return redirect(route('foradmin.account'));
     }
 }

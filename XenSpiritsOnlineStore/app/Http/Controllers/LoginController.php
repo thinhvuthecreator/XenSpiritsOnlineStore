@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
     public function Login(Request $request)
@@ -20,7 +21,9 @@ class LoginController extends Controller
             // check if password input match the password hashed
             if (Hash::check($request->password_input, $hashedPassword)) {
               // password match
-               if($request->email_input == "thinhvuh@gmail.com") // email dang nhap la email quan tri vien
+              $role_name = DB::table('roles')->where('id',$account->role_id)->value('name'); // lấy ra role name của account hiện tại
+
+               if($role_name == "Quản trị viên") // email dang nhap la email quan tri vien
                   {
                      if (session_status() == PHP_SESSION_NONE) {
                         session_start();

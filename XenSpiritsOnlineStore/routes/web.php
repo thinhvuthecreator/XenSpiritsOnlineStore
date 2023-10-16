@@ -81,7 +81,7 @@ Route::prefix('/admin')->group(function(){
         Route::get('/add',[AccountController::class,'AddAccount'])->name('foradmin.account.add');
         Route::post('/add',[AccountController::class,'AddAccountData'])->name('foradmin.account.addData');
         Route::get('/edit/{id}',[AccountController::class,'EditAccount'])->name('foradmin.account.edit');
-        Route::get('/edit',[AccountController::class,'EditAccountData'])->name('foradmin.account.editData');
+        Route::post('/edit',[AccountController::class,'EditAccountData'])->name('foradmin.account.editData');
     });
 
     Route::prefix('/statistic')->group(function(){

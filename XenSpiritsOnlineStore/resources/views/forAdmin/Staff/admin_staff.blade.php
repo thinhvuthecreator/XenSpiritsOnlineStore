@@ -25,6 +25,7 @@
     <tr>
       <th scope="col">Mã nhân viên</th>
       <th scope="col">Tên</th>
+      <th scope="col">Vai trò</th>
       <th scope="col">Số điện thoại</th>
       <th scope="col">Ngày sinh</th>
       <th scope="col">Căn cước công dân</th>
@@ -33,9 +34,14 @@
   </thead>
   <tbody>
     @foreach($staffs as $staff)
+    @php
+     $role_id = DB::table('accounts')->where('staff_id',$staff->id)->value('role_id');
+     $role_name = DB::table('roles')->where('id',$role_id)->value('name');
+    @endphp
     <tr>
       <td>{{ $staff->id }}</td>
       <td>{{ $staff->full_name }}</td>
+      <td>{{ $role_name }}</td>
       <td>{{ $staff->phone }}</td>
       <td>{{ $staff->date_of_birth}}</td>
       <td>{{ $staff->citizen_id }}</td>
