@@ -63,7 +63,8 @@ Route::prefix('/admin')->group(function(){
         Route::get('/',[StaffController::class,'ShowStaff'])->name('foradmin.staff');
         Route::get('/add',[StaffController::class,'AddStaff'])->name('foradmin.staff.add');
         Route::post('/add',[StaffController::class,'AddStaffData'])->name('foradmin.staff.addData');
-
+        Route::get('/edit/{id}',[StaffController::class,'EditStaff'])->name('foradmin.staff.edit');
+        Route::post('/edit',[StaffController::class,'EditStaffData'])->name('foradmin.staff.editData');
     });
 
     Route::prefix('/role')->group(function(){
