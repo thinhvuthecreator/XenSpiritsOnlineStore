@@ -32,24 +32,20 @@
           </thead>
              
           <tbody>
-             <!-- <tr>
-                 <th>1</th>
-                 <td>Mark</td>
-                 <td>Otto</td>
-             </tr>
-             <tr>
-                 <th>2</th>
-                 <td>Jacob</td>
-                 <td>Thornton</td>
-              </tr> -->
-
               @foreach($Accounts as $account)
               
+              @php
+              $role_name = DB::table('roles')->where('id',$account->role_id)->value('name');
+              @endphp
                 <tr>
                  <th>{{ $account->id }}</th>
                  <td>{{ $account->email }}</td>
-                 <td>{{ $account->id }}</td>
+                 <td>{{ $role_name }}</td>
                  <td>{{ $account->created_at }}</td>
+                 <td> 
+                   <a href="{{ route('foradmin.account.edit',['id' => $account->id]) }}" class="btn btn-success">Edit</a>
+                   <a href="#" class="btn btn-danger">Delete</a>
+                 </td>
                 </tr>
 
               @endforeach

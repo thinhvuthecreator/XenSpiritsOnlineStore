@@ -39,8 +39,8 @@
                  <td>{{ $role->name }}</td>
                  <td>{{ $role->discription }}</td>
                  <td> 
-                  <button class="btn btn-success">Edit</button>
-                  <button class="btn btn-danger">Delete</button>
+                  <a href="{{ route('foradmin.role.edit',['id' => $role->id]) }}"><button class="btn btn-success">Edit</button></a>
+                  <a><button class="btn btn-danger">Delete</button></a>
                  </td>
     
                 </tr>

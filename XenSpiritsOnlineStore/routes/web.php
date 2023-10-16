@@ -71,7 +71,8 @@ Route::prefix('/admin')->group(function(){
         Route::get('/',[RoleController::class,'ShowRole'])->name('foradmin.role');
         Route::get('/add',[RoleController::class,'AddRole'])->name('foradmin.role.add');
         Route::post('/add',[RoleController::class,'AddRoleData'])->name('foradmin.role.addData');
-
+        Route::get('/edit/{id}',[RoleController::class,'EditRole'])->name('foradmin.role.edit');
+        Route::post('/edit',[RoleController::class,'EditRoleData'])->name('foradmin.role.editData');
     });
 
     Route::prefix('/account')->group(function(){
@@ -79,7 +80,8 @@ Route::prefix('/admin')->group(function(){
         Route::get('/',[AccountController::class,'ShowAccount'])->name('foradmin.account');
         Route::get('/add',[AccountController::class,'AddAccount'])->name('foradmin.account.add');
         Route::post('/add',[AccountController::class,'AddAccountData'])->name('foradmin.account.addData');
-
+        Route::get('/edit/{id}',[AccountController::class,'EditAccount'])->name('foradmin.account.edit');
+        Route::get('/edit',[AccountController::class,'EditAccountData'])->name('foradmin.account.editData');
     });
 
     Route::prefix('/statistic')->group(function(){
