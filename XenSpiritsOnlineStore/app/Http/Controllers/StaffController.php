@@ -15,7 +15,7 @@ class StaffController extends Controller
         $staffs = Staff::all();
         return view('forAdmin.Staff.admin_staff',compact('staffs'));
     }
-    public function AddStaff(Request $request)
+    public function AddStaff()
     {
 
         $roles = Role::all();
@@ -52,5 +52,11 @@ class StaffController extends Controller
         return redirect()->back();
         // echo 'citizen id : '.str::length($request->citizen_id_input)."\n";
         // echo 'phone : '.str::length($request->phone_input);
+    }
+
+    public function EditStaff($id)
+    {
+        $roles = Role::all();
+        return view('forAdmin.Staff.edit',compact('roles'));
     }
 }

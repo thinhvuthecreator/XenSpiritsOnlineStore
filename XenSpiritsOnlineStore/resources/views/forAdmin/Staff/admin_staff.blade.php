@@ -46,6 +46,10 @@
       <td>{{ $staff->date_of_birth}}</td>
       <td>{{ $staff->citizen_id }}</td>
       <td>{{ $staff->created_at }}</td>
+      <td> 
+        <a href="{{ route('foradmin.staff.edit',['id' => $staff->id]) }}" class="btn btn-success">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </td>
     </tr>
     @endforeach
   </tbody>
