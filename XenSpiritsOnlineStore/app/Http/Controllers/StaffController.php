@@ -17,6 +17,7 @@ class StaffController extends Controller
     }
     public function AddStaff(Request $request)
     {
+
         $roles = Role::all();
         return view('forAdmin.Staff.add',compact('roles'));
     }
