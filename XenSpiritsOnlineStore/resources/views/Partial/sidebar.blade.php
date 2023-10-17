@@ -12,7 +12,7 @@
           <img src="{{asset('AdminLTE/dist/img/twixim.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">TWIXIM_</a>
+          <a href="{{ route('foradmin.profile') }}" class="d-block">TWIXIM_</a>
         </div>
         <div>
           <br>
