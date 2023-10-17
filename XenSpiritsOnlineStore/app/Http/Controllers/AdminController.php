@@ -19,4 +19,9 @@ class AdminController extends Controller
           $_SESSION["adminlogin"] = "AdminNotLogged";
         return redirect('/login');
     }
+
+    public function ShowProfile()
+    {
+        return view('forAdmin.profile');
+    }
 }
