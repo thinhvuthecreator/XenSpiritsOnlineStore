@@ -17,6 +17,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('AdminLTE/dist/css/adminlte.min.css')}}">
   <!-- Icon -->
   <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{asset('CSS/admin.profile.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
