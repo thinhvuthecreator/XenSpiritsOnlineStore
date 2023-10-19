@@ -54,10 +54,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('foradmin.statistic') }}" class="nav-link">
+            <a href="{{ route('foradmin.customer') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Statistical tables
+                Customers
               </p>
             </a>
           </li>

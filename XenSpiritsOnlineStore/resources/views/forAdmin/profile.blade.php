@@ -40,10 +40,10 @@
                       <label>Căn cước công dân</label><br>
                       <input readonly type="text" class="user-info-input" name="citizen_id_input" value ="051202001724"><br>
                       <label>Vai trò</label><br>
-                      <input readonly type="text" class="user-info-input" name="role_input" value ="Quản trị viên">
+                      <input readonly type="text" class="user-info-input" name="role_input" value ="Quản trị viên"><br>
+                      <input type="submit" onclick="save(event)" id="save_btn" style="margin-bottom: 10px; width:290px; display : none" value="Lưu">
                     </form>
                     <button onclick="edit(event)" id="edit_btn">Chỉnh sửa</button> 
-                    <button onclick="save(event)" id="save_btn" style="display : none">Lưu</button>
                     <button onclick="cancel(event)" id="cancel_btn"  style="display : none">Hủy</button> 
          <script>
          $(document).ready(function(){
@@ -73,11 +73,11 @@
                     <label>Email</label><br>
                       <input readonly type="text" class="user-info-input" name="email_input" value ="thinhvuh@gmail.com"><br>
                     <label>Mật khẩu</label><br>
-                      <input readonly type="text" class="user-info-input" name="password_input" value ="lonhuy8102002">
+                      <input readonly type="text" class="user-info-input" name="password_input" value ="lonhuy8102002"><br>
+                    <input type="submit" onclick="save(event)" id="save_acc_btn" style="margin-bottom: 10px; width:290px; display : none" value="Lưu">
                     </form>
                     <button onclick="edit(event)" id="edit_acc_btn">Chỉnh sửa</button> 
-                    <button onclick="save(event)" id="save_acc_btn" style="display : none">Lưu</button>
-                    <button onclick="cancel(event)" id="cancel_acc_btn"  style="display : none">Hủy</button> 
+                    <button onclick="cancel(event)" id="cancel_acc_btn"  style="display : none;">Hủy</button> 
     <script>
          $(document).ready(function(){
           $('#edit_acc_btn').on('click',function(){
@@ -93,7 +93,8 @@
           });
 
           $('#save_acc_btn').onclick('click',function(){
-            
+             var email = $('#email_input').val();
+             var password = $('#password_input').val();
           });
 
         });
