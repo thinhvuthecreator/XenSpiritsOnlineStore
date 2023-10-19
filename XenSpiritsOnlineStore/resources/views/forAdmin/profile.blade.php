@@ -26,10 +26,10 @@
         <div class="col-md-6">
                  <div class="row">
                   <div class="col-md-6">
-                  <label style="margin-left: 0px; margin-bottom: 30px; font-size: 18px; width:180px">Thông tin cá nhân</label>
-                    <img style="width: 340px; height: 380px; display:inline; margin-top: 7px;" src="https://scontent.fhan4-3.fna.fbcdn.net/v/t39.30808-6/391698355_801947288396747_9208904244830062786_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=l4b5Qnn45iMAX_H53pR&_nc_ht=scontent.fhan4-3.fna&oh=00_AfABeJNSKiVzQKZeKtJTjUEfNUK0UJwpaU25NEVprYm5nA&oe=6533ADD1">
+                  <label style="margin-left: 0px; margin-bottom: 40px; font-size: 18px; width:180px">Thông tin cá nhân</label>
+                    <img style="width: 340px; height: 380px; display:inline; margin-top: 3px;" src="https://scontent.fhan4-3.fna.fbcdn.net/v/t39.30808-6/391698355_801947288396747_9208904244830062786_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=l4b5Qnn45iMAX_H53pR&_nc_ht=scontent.fhan4-3.fna&oh=00_AfABeJNSKiVzQKZeKtJTjUEfNUK0UJwpaU25NEVprYm5nA&oe=6533ADD1">
                   </div>
-                   <div class="col-md-6" style="margin-left : -20px; margin-top: 10px;">
+                   <div class="col-md-6" style="margin-left : -20px; margin-top: 15px;">
                     <form class="user-info-form">
                       <label>Tên</label><br>
                       <input readonly type="text" class="user-info-input" name="full_name_input" value =" Vu Hoang Tuan Thinh"><br>
@@ -59,14 +59,17 @@
             $('.user-info-input').attr("readonly", "readonly");
           });
 
+          $('#save_acc_btn').onclick('click',function(){
+            
+          });
         });
     </script>
             </div>
          </div>
         </div>
         <div class="col-md-6" style="margin-top: 4px">
-        <label style="margin-left: 0px; margin-bottom: 30px; font-size: 18px; width:180px;margin-top: 0px;">Thông tin tài khoản</label>
-        <form class="account-info-form">
+        <label style="margin-left: 0px; margin-bottom: 30px; font-size: 18px; width:180px;margin-top: -6px;">Thông tin tài khoản</label>
+        <form class="account-info-form" style="margin-top: 5px">
                     <label>Email</label><br>
                       <input readonly type="text" class="user-info-input" name="email_input" value ="thinhvuh@gmail.com"><br>
                     <label>Mật khẩu</label><br>
@@ -87,6 +90,10 @@
             $('#save_acc_btn').hide();
             $('#cancel_acc_btn').hide();
             $('.user-info-input').attr("readonly", "readonly");
+          });
+
+          $('#save_acc_btn').onclick('click',function(){
+            
           });
 
         });
