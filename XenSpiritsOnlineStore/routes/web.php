@@ -12,7 +12,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\StatisticController;
+use App\Http\Controllers\CustomerController;
 use PHPUnit\Framework\Attributes\Group;
 /*
 |--------------------------------------------------------------------------
@@ -85,9 +85,9 @@ Route::prefix('/admin')->group(function(){
         Route::post('/edit',[AccountController::class,'EditAccountData'])->name('foradmin.account.editData');
     });
 
-    Route::prefix('/statistic')->group(function(){
+    Route::prefix('/customer')->group(function(){
         
-        Route::get('/',[StatisticController::class,'ShowStatistic'])->name('foradmin.statistic');
+        Route::get('/',[CustomerController::class,'ShowCustomer'])->name('foradmin.customer');
 
     });
 
