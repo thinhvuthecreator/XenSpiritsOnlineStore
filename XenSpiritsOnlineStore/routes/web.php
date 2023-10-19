@@ -37,6 +37,9 @@ Route::get('/login',[LoginController::class,'ShowLogin'])->name('login');
 Route::post('/login',[LoginController::class,'Login']);
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
+
+Route::get('/profile',[CustomerController::class,'ShowProfile']);
+
 Route::prefix('/admin')->group(function(){
 
     Route::get('/',[AdminController::class, 'ShowAdmin'])->name('foradmin.admin_home')->middleware('admin.access');

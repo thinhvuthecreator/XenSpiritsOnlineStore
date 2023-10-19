@@ -12,4 +12,9 @@ class CustomerController extends Controller
         $customers = customer::all();
         return view('forAdmin.customer.admin_customer',compact('customers'));
     }
+
+    public function ShowProfile(Request $request)
+    {
+        return view('forClient.profile');
+    }
 }
