@@ -1,6 +1,6 @@
 .main-sidebar{
     position: relative;
-    top: -2px;
+    top: 0px;
     margin-top:48px;
     background-color: rgb(12, 12, 12);
     width: 260px;
@@ -36,7 +36,7 @@
 
 .big-row{
     margin-left: 150px;
-    margin-top: 90px;
+    margin-top: -630px;
     width: 1400px;
 }
 

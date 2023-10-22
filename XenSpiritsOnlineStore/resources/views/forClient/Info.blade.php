@@ -52,8 +52,8 @@
             </div>
  
 
-        <div class="col-md-6" style="margin-top: 4px; float:right" >
-        <label style="margin-left: 0px; font-size: 20px; width:180px;margin-top: -3px;" class="title">Thông tin tài khoản</label>
+        <div class="col-md-6" style="margin-top: 0px; float:right;" #id="acc_form">
+        <label style="margin-left: -100px; font-size: 20px; width:180px;margin-top: -10px;" class="title">Thông tin tài khoản</label>
         <form class="account-info-form">
                     <label>Email</label><br>
                       <input readonly type="text" class="user-info-input" name="email_input" value ="thinhvuh@gmail.com"><br>

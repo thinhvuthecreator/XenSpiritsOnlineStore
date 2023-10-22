@@ -27,7 +27,17 @@
         <li><a href="http://localhost:8000/wishlist">Giỏ hàng</a></li>
         <li><a href="#">Tìm kiếm</a></li>
         <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
+        <?php
+          if(session_status() == PHP_SESSION_NONE)
+          {
+               session_start();
+          }
+        ?>
+        @if($_SESSION['login_status'] == "Logged")
+        <li><a href="http://localhost:8000/profile">User123</a></li>
+        @else
         <li><a href="http://localhost:8000/login">Đăng nhập / Đăng kí</a></li>
+        @endif
       </ul>
       <hr class="hr-top"></hr>
       </div>

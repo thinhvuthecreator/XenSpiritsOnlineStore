@@ -29,6 +29,7 @@ class LoginController extends Controller
                         session_start();
                       }
                      $_SESSION['adminlogin'] = "AdminLogged";
+                     $_SESSION['login_status'] = "Logged";
 
                      return redirect(route('foradmin.admin_home')); 
                   }
@@ -38,6 +39,7 @@ class LoginController extends Controller
                         session_start();
                       }
                      $_SESSION['clientlogin'] = "ClientLogged";
+                     $_SESSION['login_status'] = "Logged";
                         return redirect(route('home'));  
                       
                   }
@@ -50,7 +52,7 @@ class LoginController extends Controller
 
     public function ShowLogin()
     {
-       return view('login');
+     return view('login');
     }
 
     public function ShowRegister()
