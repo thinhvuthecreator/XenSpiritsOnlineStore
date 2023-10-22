@@ -39,6 +39,9 @@ Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
 
 Route::get('/profile',[CustomerController::class,'ShowProfile']);
+Route::get('/profile-info', function(){
+    return view('forClient.Info');
+});
 
 Route::prefix('/admin')->group(function(){
 
