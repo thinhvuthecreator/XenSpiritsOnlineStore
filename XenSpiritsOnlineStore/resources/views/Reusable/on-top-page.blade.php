@@ -2,6 +2,12 @@
      <link rel="stylesheet" href="{{asset('CSS/on-top-page-style.css')}}" ></link>
 </head>
 <body>
+<?php
+          if(session_status() == PHP_SESSION_NONE)
+          {
+               session_start();
+          }
+        ?>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <div class="OnTopHomePage">
       <h1 class="XenTopPage">XEN.SPIRITS ®</h1>
@@ -19,13 +25,8 @@
         <li><a href="http://localhost:8000/products">Sản phẩm</a></li>
         <li><a href="http://localhost:8000/wishlist">Giỏ hàng</a></li>
         <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
-        <?php
-          if(session_status() == PHP_SESSION_NONE)
-          {
-               session_start();
-          }
-        ?>
         @if( isset($_SESSION['login_status']) && $_SESSION['login_status'] == "Logged")
+        <li id="invisible-li"><a>ttttttttttttttttttttt</a></li>
      </ul>
           <ul id="user-logged-status">
                <li id="user-btn" ><a href="http://localhost:8000/profile">User123</a></li>

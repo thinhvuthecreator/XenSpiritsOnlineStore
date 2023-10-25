@@ -34,7 +34,8 @@
           }
         ?>
          @if( isset($_SESSION['login_status']) && $_SESSION['login_status'] == "Logged")
-     </ul>
+         <li id="invisible-li"><a>ttttttttttttttttttttt</a></li>
+        </ul>
           <ul id="user-logged-status">
                <li id="user-btn" ><a href="http://localhost:8000/profile">User123</a></li>
                <li id="logout-btn"><a href="{{ route('logout') }}">Đăng xuất</a></li>

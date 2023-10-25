@@ -17,7 +17,7 @@ html{
 
 .navigator-header{
     float: right;
-    margin-right: 150;
+    margin-right: 50;
     margin-top: -8;
     list-style: none;
 }
@@ -293,7 +293,7 @@ footer li{
     z-index: 3;
     list-style: none;
     float: right;
-    left: 503;
+    left: 504;
     margin-top: -8;
  }
  
@@ -329,6 +329,10 @@ footer li{
  #user-logged-status #logout-btn a{
      position: absolute;
      top: 50px;
+ }
+
+ #invisible-li{
+    visibility: hidden;
  }
  
     
