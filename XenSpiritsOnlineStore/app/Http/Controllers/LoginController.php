@@ -60,4 +60,16 @@ class LoginController extends Controller
       
        return view('register');
     }
+
+    public function Logout()
+    {
+      if(session_status() == PHP_SESSION_NONE)
+      {
+           session_start();
+      }
+
+      $_SESSION['adminlogin'] = '';
+      $_SESSION['login_status'] = '';
+      return redirect(route('showlogin'));
+    }
 }
