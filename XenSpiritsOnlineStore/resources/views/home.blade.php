@@ -9,7 +9,8 @@
     </head>    
 
     <body>
-     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
       <div class="OnTopHomePage">
       <h1 class="XenTopPage">XEN.SPIRITS ®</h1>
       <img class="XenLogo" 
@@ -20,12 +21,11 @@
            src="{{asset('Resource/xen-logo-top.png')}}"
            alt="img">
       </img>
-   
+      <hr class="hr-top"></hr>
       <ul class="navigator-header">
         <li><a href="http://localhost:8000/">Trang chủ</a></li>
         <li><a href="http://localhost:8000/products">Sản phẩm</a></li>
         <li><a href="http://localhost:8000/wishlist">Giỏ hàng</a></li>
-        <li><a href="#">Tìm kiếm</a></li>
         <li><a href="http://localhost:8000/size-guide">Hướng dẫn kích cỡ</a></li>
         <?php
           if(session_status() == PHP_SESSION_NONE)
@@ -33,13 +33,43 @@
                session_start();
           }
         ?>
-        @if($_SESSION['login_status'] == "Logged")
-        <li><a href="http://localhost:8000/profile">User123</a></li>
+         @if( isset($_SESSION['login_status']) && $_SESSION['login_status'] == "Logged")
+     </ul>
+          <ul id="user-logged-status">
+               <li id="user-btn" ><a href="http://localhost:8000/profile">User123</a></li>
+               <li id="logout-btn"><a href="{{ route('logout') }}">Đăng xuất</a></li>
+          <ul>
+        </ul> 
         @else
-        <li><a href="http://localhost:8000/login">Đăng nhập / Đăng kí</a></li>
+        <li><a href="{{route('showlogin')}}">Đăng nhập / Đăng kí</a></li>
+        </ul>
         @endif
       </ul>
-      <hr class="hr-top"></hr>
+     
+      <script>
+        $(function() {
+                $('#user-btn').hover(function() {
+          $('#logout-btn').css('display', 'block');
+                }, function() {
+           // on mouseout, reset the background colour
+          $('#logout-btn').hover(function(){
+               $('#logout-btn').css('display','block')
+          } , function(){ $('#logout-btn').css('display','none'); })
+          });
+
+          $('#user-btn').hover(function() {
+          $('#logout-btn').css('display', 'block');
+                }, function() {
+           // on mouseout, reset the background colour
+          $('#logout-btn').css('display','none');
+          });
+
+          $('#logout-btn').hover(function(){
+               $('#logout-btn').css('display','block')
+          } , function(){ $('#logout-btn').css('display','none'); })
+});
+      </script>
+
       </div>
       
       <header class="mainImageHome">

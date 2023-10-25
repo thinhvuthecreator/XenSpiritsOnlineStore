@@ -45,30 +45,14 @@
 }
 
 
-#save_btn, #save_acc_btn{
-    width: 250px;
-    margin-bottom: -5;
-    height: 40px;
-}
-
-#edit_btn, #edit_acc_btn{
-    height: 35px;
-    width: 90px;
-    margin-top: -10px;
-}
-
-#cancel_btn, #cancel_acc_btn{
-    height: 35px;
-    width: 90px;
-}
-
-.content{
+.contentt{
     background: blue; 
-    width : 1410px; 
-    height : 705px; 
+    width : 84%; 
+    height : 89%; 
     float: left; 
     position : relative; 
-    top: -718px; 
-
+    top: -674px; 
+    left: 265;
+    overflow: hidden;
 }
 

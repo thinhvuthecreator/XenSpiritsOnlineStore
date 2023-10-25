@@ -15,7 +15,7 @@ html{
 
 .navigator-header{
     float: right;
-    margin-right: 30;
+    margin-right: 150;
     margin-top: 10;
     list-style: none;
 }
@@ -64,8 +64,52 @@ html{
     visibility: hidden;
 }
 hr{
-    position: relative;
+    position: fixed;
     z-index: 1;
-    top: 3;
-    width: 100%;
+    top: 50;
+    width: 100%;   
 }
+#user-logged-status{
+   position: relative;
+   z-index: 3;
+   list-style: none;
+   float: right;
+   left: 503;
+   margin-top: 10;
+}
+
+#user-logged-status li a{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size:13;
+    margin-left: 16;
+}
+
+
+#user-logged-status li{
+    background: black;
+    margin-bottom: 10px;
+    width: 90;
+    height: 30;
+    padding: 0 5px;
+}
+
+#user-logged-status li a:hover,
+#user-logged-status li a:active{
+    color: rgb(0, 255, 225);
+}
+
+#user-logged-status #logout-btn{
+    display: none;
+    height: 95px;
+    margin-top: -50px;
+ 
+}
+
+#user-logged-status #logout-btn a{
+    position: absolute;
+    top: 50px;
+}
+
+

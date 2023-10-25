@@ -1,7 +1,6 @@
 <head>
       <title>Xen. Spirits®</title>
       <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
-      <link rel="stylesheet" href="{{asset('CSS/admin.profile.css')}}">
       <link rel="stylesheet" href="{{asset('CSS/customer-profile-style.css')}}">
 </head>
 

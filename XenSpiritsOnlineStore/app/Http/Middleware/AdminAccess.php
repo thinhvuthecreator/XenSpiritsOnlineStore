@@ -21,7 +21,7 @@ class AdminAccess
 
         if(!isset($_SESSION["adminlogin"]) || ($_SESSION["adminlogin"] != "AdminLogged"))
         {
-            return redirect('/login');
+            return redirect(route('showlogin'));
         }
     
         return $next($request);

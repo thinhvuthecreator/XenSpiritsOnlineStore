@@ -16,7 +16,7 @@
         </div>
         <div>
           <br>
-          <a href="{{ route('foradmin.admin_logout') }}">Đăng xuất</a>
+          <a href="{{ route('logout') }}">Đăng xuất</a>
         </div>
       </div>
 

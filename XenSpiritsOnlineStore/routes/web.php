@@ -33,15 +33,16 @@ Route::prefix('/products')->group(function(){
     Route::get('/detail/{id}',[ProductController::class,'ShowProductDetail'])->name('product_detail_client');
 });
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
-Route::get('/login',[LoginController::class,'ShowLogin'])->name('login');
-Route::post('/login',[LoginController::class,'Login']);
+Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');
+Route::post('/login',[LoginController::class,'Login'])->name('login');
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
-
 Route::get('/profile',[CustomerController::class,'ShowProfile']);
 Route::get('/profile-info', function(){
     return view('forClient.Info');
 });
+Route::get('/logout',[LoginController::class,'Logout'])->name('logout');
+
 
 Route::prefix('/admin')->group(function(){
 
