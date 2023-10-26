@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('CSS/customer.sidebar.css')}}">
 </head>
 <body>
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" id="main-sidebar">
     <!-- Brand Logo -->
 
     <!-- Sidebar -->
@@ -28,50 +28,26 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('foradmin.category') }}" class="nav-link">
+            <a class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Product Categories
+                Thông tin
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('foradmin.product') }}" class="nav-link">
+            <a class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Products
+                Giỏ hàng
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('foradmin.customer') }}" class="nav-link">
+            <a class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Customers
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('foradmin.staff') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Staffs
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('foradmin.role') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Roles
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('foradmin.account') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Accounts
+                Đã mua
               </p>
             </a>
           </li>
