@@ -1,0 +1,9 @@
+
+#navigator-title{
+    color: white;
+}
+
+#navigator-title:hover,
+#navigator-title:active{
+    color: rgb(0, 255, 225);
+}
