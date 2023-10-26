@@ -1,44 +1,29 @@
 .user-info-input{
     margin-bottom: 10px;
-    margin-top: -100px;
     width: 250px;
     height: 37;
 }
 
 .user-info-form{
-  background-color: aqua;
-  position: absolute;
-  left: 400px;
-  top: -220px;
+    top:  0;
+    margin-top: 26px;
+    margin-left: 10px;
+    
 }
 
+.account-info-form{
+    margin-top: -45px;
+    margin-left: -100px;
+}
 
-#save_btn{
-    margin-bottom: 10px; 
-    width:250px;
-    display : none;
+#acc_form{
+    background-color: blue;
 }
 
 #edit_btn{
-    position: absolute;
-    top: 157px;
-    left: 400px;
-    z-index: 4;
-}
-#cancel_btn{
-    position: absolute;
-    top: 157px;
-    left: 400px;
-    display : none
+    margin-left: 10px;
 }
 
-
-.account-info-form{
-    background-color: aqua;
-    position: relative;
-    top: -220px;
-    left: 650px;
-}
 
 #save_btn, #save_acc_btn{
     width: 250px;
@@ -49,7 +34,11 @@
     width:250px; 
     display : none;
 }
-
+#save_btn{
+    margin-bottom: 10px; 
+    width:250px;
+    display : none;
+}
 
 #edit_btn, #edit_acc_btn{
     height: 35px;
@@ -64,17 +53,23 @@
 
 #cancel_acc_btn{
     position: relative;
-    left: 617px;
-    top: -215px;
+    left: -33px;
     display : none;
 }
 
+#edit_btn{
+    position: relative;
+
+}
 #edit_acc_btn{
     position: relative;
-    top: -215px;
-    left: 550px;
+    left: -100px;
 }
-
+#cancel_btn{
+    position: relative;
+    left: 67px;
+    display : none
+}
 
 #info-title{
     position: relative;
@@ -92,9 +87,6 @@
 }
 
 #image{
-    position: relative;
-    left: 50px;
-    top: -235px;
     width: 340px;
     height: 380px;
     display:inline; 
@@ -107,9 +99,8 @@
 }
 
 #user-info-title{
-    position: relative;
-    top: -230px;
-    left: 50px;
+    margin-left: 0px; 
+    margin-top: -5px;
     margin-bottom: 40px;
     font-size: 18px; 
     width:180px;
@@ -121,7 +112,14 @@
 
 #account-info-title{
     position: relative;
-    top: -220px;
-    left: 650px;
+    margin-left: -100px; 
+    margin-bottom: 55px; 
+    top: -1px;
+    font-size: 18px; 
+    width:180px;
    
+}
+
+body{
+    overflow: hidden;
 }
