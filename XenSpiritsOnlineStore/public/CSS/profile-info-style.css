@@ -6,10 +6,9 @@
 }
 
 .user-info-form{
-  background-color: aqua;
-  position: absolute;
+  position: relative;
   left: 400px;
-  top: -220px;
+  top: -645px;
 }
 
 
@@ -17,24 +16,26 @@
     margin-bottom: 10px; 
     width:250px;
     display : none;
+    z-index: 4;
 }
 
 #edit_btn{
-    position: absolute;
-    top: 157px;
+    position: relative;
+    top: -640px;
     left: 400px;
     z-index: 4;
 }
 #cancel_btn{
-    position: absolute;
-    top: 157px;
-    left: 400px;
+    position: relative;
+    top: -640px;
+    left: 468px;
+    z-index: 4;
     display : none
 }
 
 
 .account-info-form{
-    background-color: aqua;
+   
     position: relative;
     top: -220px;
     left: 650px;
