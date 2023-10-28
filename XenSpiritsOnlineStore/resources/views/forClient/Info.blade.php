@@ -8,6 +8,13 @@
 if (session_status() == PHP_SESSION_NONE) {
                         session_start();
 }
+$account = DB::table('accounts')->where("client_id", $_SESSION["client_id"])->first();
+$user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
+                     $_SESSION["client_email"] = $account->email;
+                     $_SESSION["client_name"] = $user->full_name;
+                     $_SESSION["client_phone"] = $user->phone;
+                     $_SESSION["client_address"] = $user->address;
+                     $_SESSION["client_image"] = $user->image;
 @endphp
 <div class="row">
         <div class="col-md-6" id="user-info-container">
@@ -47,13 +54,19 @@ if (session_status() == PHP_SESSION_NONE) {
       </div>
         <div class="col-md-6" id="account-info-container">
         <label id="account-info-title" >Thông tin tài khoản</label>
-        <form class="account-info-form">
+        <form class="account-info-form" method="POST" action="{{ route('customer.profile.changepassData') }}">
+                   @csrf
                     <label>Email</label><br>
                       <input readonly type="text" class="user-info-input" name="email_input" value ="{{ $_SESSION['client_email'] }}"><br>
-                    <label>Mật khẩu</label><br>
-                      <input readonly type="text" class="user-info-input" name="password_input" value ="lonhuy8102002"><br>
+                    <label class="title-pass">Nhập mật khẩu cũ</label><br>
+                      <input readonly type="password" class="user-info-input" id="old_pass_input" name="password_input"><br>
+                      <label class="title-pass">Nhập mật khẩu mới</label><br>
+                      <input readonly type="password" class="user-info-input" id ="new_pass_input" name="password_input"><br>
+                      <label class="title-pass">Xác nhận mật khẩu mới</label><br>
+                      <input readonly type="password" class="user-info-input" id ="confirm_pass_input" name="password_input"><br>
                     <input type="submit" onclick="save(event)" id="save_acc_btn" value="Lưu">
                     </form>
+                    
                     <button onclick="edit(event)" id="edit_acc_btn">Chỉnh sửa</button> 
                     <button onclick="cancel(event)" id="cancel_acc_btn" >Hủy</button> 
     <script>
@@ -61,12 +74,20 @@ if (session_status() == PHP_SESSION_NONE) {
           $('#edit_acc_btn').on('click',function(){
             $('#save_acc_btn').show();
             $('#cancel_acc_btn').show();
+            $('#old_pass_input').show();
+            $('#new_pass_input').show();
+            $('#confirm_pass_input').show();
+            $('.title-pass').show();
             $('.user-info-input').removeAttr("readonly");
           });
           
           $('#cancel_acc_btn').on('click',function(){
             $('#save_acc_btn').hide();
             $('#cancel_acc_btn').hide();
+            $('#old_pass_input').hide();
+            $('#new_pass_input').hide();
+            $('#confirm_pass_input').hide();
+            $('.title-pass').hide();
             $('.user-info-input').attr("readonly", "readonly");
           });
 
