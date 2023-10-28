@@ -11,10 +11,11 @@ if (session_status() == PHP_SESSION_NONE) {
 @endphp
 <div class="row">
         <div class="col-md-6" id="user-info-container">
-                     <label id="user-info-title" >Thông tin cá nhân</label>
+                     <label id="user-info-title">Thông tin cá nhân</label>
                      <img id="image" src="https://i.pinimg.com/originals/9e/17/6f/9e176f0eb722cdaf920fd267c3a4f2a6.jpg">
-                     <form class="user-info-form" method="/profile">
-                      <label>Tên</label><br>
+                     <form class="user-info-form" method="POST" action="{{ route('customer.profile.changeData') }}">
+                     @csrf 
+                     <label>Tên</label><br>
                       <input readonly type="text" class="user-info-input" name="full_name_input" value ="{{ $_SESSION['client_name'] }}"><br>
                       <label>Số điện thoại</label><br>
                       <input readonly type="text" class="user-info-input" name="phone_input" value ="{{ $_SESSION['client_phone'] }}"><br>
