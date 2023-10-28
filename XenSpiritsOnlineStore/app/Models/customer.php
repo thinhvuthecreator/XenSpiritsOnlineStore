@@ -14,7 +14,6 @@ class customer extends Model
         'phone',
         'address',
         'image',
-        'date_of_birth',
     ];
 
 

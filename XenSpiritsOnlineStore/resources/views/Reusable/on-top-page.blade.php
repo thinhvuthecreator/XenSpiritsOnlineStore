@@ -29,7 +29,7 @@
         <li id="invisible-li"><a>ttttttttttttttttttttt</a></li>
      </ul>
           <ul id="user-logged-status">
-               <li id="user-btn" ><a href="http://localhost:8000/profile">User123</a></li>
+               <li id="user-btn" ><a href="http://localhost:8000/profile">{{ $_SESSION["client_name"]}}</a></li>
                <li id="logout-btn"><a href="{{ route('logout') }}">Đăng xuất</a></li>
           <ul>
         </ul> 
