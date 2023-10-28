@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Staff;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
+use App\Models\customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
@@ -21,16 +23,23 @@ class LoginController extends Controller
             // check if password input match the password hashed
             if (Hash::check($request->password_input, $hashedPassword)) {
               // password match
-              $role_name = DB::table('roles')->where('id',$account->role_id)->value('name'); // lấy ra role name của account hiện tại
+               $role_name = DB::table('roles')->where('id',$account->role_id)->value('name'); // lấy ra role name của account hiện tại
 
-               if($role_name == "Quản trị viên") // email dang nhap la email quan tri vien
+               if($account->staff_id != null) // email dang nhap la email quan tri vien
                   {
                      if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                       }
                      $_SESSION['adminlogin'] = "AdminLogged";
                      $_SESSION['login_status'] = "Logged";
-
+                     
+                       //lấy ra thông tin người dùng
+                       $account = Account::where("email", $account->email)->first();
+                       $user = Staff::where("id", $account->staff_id)->first();
+                       $_SESSION["role_name"] = $role_name;
+                       $_SESSION["staff_email"] = $account->email;
+                       $_SESSION["staff_name"] = $user->full_name;
+                       //
                      return redirect(route('foradmin.admin_home')); 
                   }
                else //email dang nhap la email khach hang
@@ -40,7 +49,17 @@ class LoginController extends Controller
                       }
                      $_SESSION['clientlogin'] = "ClientLogged";
                      $_SESSION['login_status'] = "Logged";
-                        return redirect(route('home'));  
+                     
+                     //lấy ra thông tin người dùng
+                     $account = Account::where("email", $account->email)->first();
+                     $user = customer::where("id", $account->client_id)->first();
+                     $_SESSION["client_email"] = $account->email;
+                     $_SESSION["client_name"] = $user->full_name;
+                     $_SESSION["client_phone"] = $user->phone;
+                     $_SESSION["client_address"] = $user->address;
+                     $_SESSION["client_image"] = $user->image;
+                     $_SESSION["client_id"] = $user->id;
+                     return redirect(route('home'));  
                       
                   }
             }

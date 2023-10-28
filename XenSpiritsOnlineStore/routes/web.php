@@ -37,7 +37,9 @@ Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');
 Route::post('/login',[LoginController::class,'Login'])->name('login');
 Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
+
 Route::get('/profile',[CustomerController::class,'ShowProfile']);
+Route::post('/profile',[CustomerController::class,'ChangeProfile'])->name('customer.profile.changeData');
 Route::get('/profile-info', function(){
     return view('forClient.Info');
 });

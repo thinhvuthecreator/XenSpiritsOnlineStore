@@ -14,7 +14,8 @@ class Account extends Model
         'email',
         'password',
         'role_id',
-        'staff_id'
+        'staff_id',
+        'client_id'
 ];
 
 /** 
