@@ -127,3 +127,11 @@
     left: 650px;
    
 }
+
+#old_pass_input,#new_pass_input,#confirm_pass_input {
+    display: none;
+}
+
+.title-pass{
+    display: none;
+}

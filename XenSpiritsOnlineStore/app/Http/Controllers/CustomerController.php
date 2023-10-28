@@ -32,14 +32,21 @@ class CustomerController extends Controller
             'phone_input.digits' => 'Số điện thoại không hợp lệ !',
         ];
         $request->validate($rules,$messages);
-
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+          }
         DB::table('customers')->where('id', $_SESSION["client_id"])->update([
             'full_name' => $request->full_name_input,
             'phone' => $request->phone_input,
             'address' => $request->address_input
         ]);
         
-        dd($_SESSION["client_id"]);
+        return redirect()->back();
+    }
+
+    public function ChangePassword(Request $request)
+    {
+       return "posted";
     }
 }
 

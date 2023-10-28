@@ -39,7 +39,9 @@ Route::get('/register',[LoginController::class,'ShowRegister']);
 Route::post('/register',[RegisterController::class,'Register']);
 
 Route::get('/profile',[CustomerController::class,'ShowProfile']);
-Route::post('/profile',[CustomerController::class,'ChangeProfile'])->name('customer.profile.changeData');
+Route::post('/profile/update-profile',[CustomerController::class,'ChangeProfile'])->name('customer.profile.changeData');
+Route::post('/profile/update-password',[CustomerController::class,'ChangePassword'])->name('customer.profile.changepassData');
+
 Route::get('/profile-info', function(){
     return view('forClient.Info');
 });
