@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\detailProductImage;
 use App\Models\product;
+use App\Models\quantity_detail;
 use App\Models\size;
 use App\Models\productCategory;
 use File;
@@ -14,8 +15,9 @@ class ProductController extends Controller
 {
     public function ShowProduct()
     {
+        $sizes = size::all();
         $products = product::all();
-         return view('forAdmin.Product.admin_product',compact('products'));
+         return view('forAdmin.Product.admin_product',compact('products','sizes'));
     }
 
     public function ShowProductClient()
@@ -114,7 +116,7 @@ class ProductController extends Controller
             'product_image_input' => 'required|image',
 
             'product_price_input' => 'required|numeric|min:0',
-            'product_quantity_input' => 'required|numeric|min:1',
+           
             'product_description_input' => 'nullable'
         ];
         $messages = [
@@ -122,7 +124,7 @@ class ProductController extends Controller
             'image' => 'Đây không phải là file ảnh ! Vui lòng chọn file ảnh',
             'numeric' => 'Vui lòng nhập số',
             'product_price_input.min' => 'Giá sản phẩm không thể âm',
-            'product_quantity_input.min' => 'Số lượng sản phẩm tối thiểu là 1'
+           
 
         ];
         $request->validate($rules,$messages);
@@ -144,9 +146,19 @@ class ProductController extends Controller
         $this->add_detail_image($request);
 
         //tạo chi tiết số lượng sau khi tạo sản phẩm
-        foreach($_POST['product_quantity_input'] as $product_size_input) {
-            // làm gì đó ở đây, $product_size_input mang giá trị của input
+        $i = 1;
+        $mang[] ='';
+        foreach ($_POST['product_quantity_input'] as $quantity ) {
+            // $lastest_product = DB::table('products')->latest('created_at')->first();
+            // quantity_detail::create([
+            //     'product_id' => $lastest_product->id,
+            //     'quantity' => $quantity,
+            //     'size_id' => $size_id,
+            // ]);
+            $mang[] = $i*2;
+             dd($mang);
         }
+        
 
         return redirect(route('foradmin.product.add'));
     }

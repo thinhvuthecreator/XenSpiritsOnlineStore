@@ -27,7 +27,10 @@
       <th scope="col">Loại sản phẩm</th>
       <th scope="col">Tên sản phẩm</th>
       <th scope="col">Giá sản phẩm</th>
+      @foreach($sizes as $size)
+      <th scope="col">Kích cỡ</th>
       <th scope="col">Số lượng</th>
+      @endforeach
       <th scope="col">Mô tả sản phẩm</th>
       <th scope="col">Ngày thêm</th>
     </tr>
@@ -36,7 +39,8 @@
     @foreach($products as $product)
     
        @php
-       $category_name = DB::table('product_categories')->where('id', $product->productCategory_id)->value('name')
+       $category_name = DB::table('product_categories')->where('id', $product->productCategory_id)->value('name');
+       $quantity_details =  DB::table('quantity_details')->where('product_id', $product->id)->get();
        @endphp
 
 
@@ -45,7 +49,10 @@
       <td> {{ $category_name }}</td>
       <td> {{ $product->name }}</td>
       <td> {{ $product->price }}</td>
-      <td> {{ $product->quantity }}</td>
+      @foreach($quantity_details as $quantity_detail)      
+      <td> {{ $quantity_detail->size_id }}</td>          
+      <td> {{ $quantity_detail->quantity }}</td>
+      @endforeach
       <td> {{ $product->productDescription }}</td>
       <td> {{ $product->created_at }}</td>
       <td> 
