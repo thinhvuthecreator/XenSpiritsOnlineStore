@@ -35,7 +35,7 @@ class RegisterController extends Controller
         Account::create([
             'email' => $request->email_input,
             'password'=>$request->password_input,
-            'role_id'=> 1,
+            'role_id'=> 7,
             'client_id'=> $user_id
         ]);
       
