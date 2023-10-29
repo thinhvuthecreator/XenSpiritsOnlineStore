@@ -144,7 +144,9 @@ class ProductController extends Controller
         $this->add_detail_image($request);
 
         //tạo chi tiết số lượng sau khi tạo sản phẩm
-        
+        foreach($_POST['product_quantity_input'] as $product_size_input) {
+            // làm gì đó ở đây, $product_size_input mang giá trị của input
+        }
 
         return redirect(route('foradmin.product.add'));
     }
