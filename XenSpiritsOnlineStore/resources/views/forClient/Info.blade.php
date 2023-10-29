@@ -59,11 +59,11 @@ $user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
                     <label>Email</label><br>
                       <input readonly type="text" class="user-info-input" name="email_input" value ="{{ $_SESSION['client_email'] }}"><br>
                     <label class="title-pass">Nhập mật khẩu cũ</label><br>
-                      <input readonly type="password" class="user-info-input" id="old_pass_input" name="password_input"><br>
+                      <input readonly type="password" class="user-info-input" id="old_pass_input" name="old_pass_input"><br>
                       <label class="title-pass">Nhập mật khẩu mới</label><br>
-                      <input readonly type="password" class="user-info-input" id ="new_pass_input" name="password_input"><br>
+                      <input readonly type="password" class="user-info-input" id ="new_pass_input" name="new_pass_input"><br>
                       <label class="title-pass">Xác nhận mật khẩu mới</label><br>
-                      <input readonly type="password" class="user-info-input" id ="confirm_pass_input" name="password_input"><br>
+                      <input readonly type="password" class="user-info-input" id ="confirm_pass_input" name="confirm_pass_input"><br>
                     <input type="submit" onclick="save(event)" id="save_acc_btn" value="Lưu">
                     </form>
                     
