@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\SizeController;
 use App\Http\Middleware\AdminAccess;
 use App\Models\LoginStatus;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,14 @@ Route::prefix('/admin')->group(function(){
         Route::post('/add',[ProductController::class,'AddProductData'])->name('foradmin.product.addData');
         Route::get('/edit/{id}',[ProductController::class,'EditProduct'])->name('foradmin.product.edit');
         Route::post('/edit/{id}',[ProductController::class,'EditProductData'])->name('foradmin.product.editData');
+    });
+    Route::prefix('/size')->group(function(){
+        
+        Route::get('/',[SizeController::class,'ShowSize'])->name('foradmin.size');
+        Route::get('/add',[SizeController::class,'AddSize'])->name('foradmin.size.add');
+        Route::post('/add',[SizeController::class,'AddSizeData'])->name('foradmin.size.addData');
+        Route::get('/edit',[SizeController::class,'EditSize'])->name('foradmin.size.edit');
+        Route::post('/edit',[SizeController::class,'EditSizeData'])->name('foradmin.size.editData');
     });
 
     Route::prefix('/staff')->group(function(){

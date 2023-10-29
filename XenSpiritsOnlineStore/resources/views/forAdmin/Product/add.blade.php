@@ -120,11 +120,14 @@
     @error('product_price_input')
                     <span style="color : red;">{{$message}}</span><br>
       @enderror
-      <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
-    <input type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product quantity">
+    <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
+    @foreach($sizes as $size)
+    <input type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter quantiy for {{ $size->name}} size">
     @error('product_quantity_input')
                     <span style="color : red;">{{$message}}</span><br>
-      @enderror
+    @enderror
+    @endforeach
+
       <label style="margin-bottom : -2px">Miêu tả sản phẩm</label>
     <input type="text" name="product_description_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Add product description">
 
