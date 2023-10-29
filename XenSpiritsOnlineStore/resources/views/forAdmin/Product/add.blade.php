@@ -122,7 +122,8 @@
       @enderror
     <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
     @foreach($sizes as $size)
-    <input type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter quantiy for {{ $size->name}} size">
+    <input type="text" name="product_quantity_input[]" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter quantiy for {{ $size->name}} size">
+    <input type="text" name="product_size_input[]" value="{{$size->id}}" style="display:none">
     @error('product_quantity_input')
                     <span style="color : red;">{{$message}}</span><br>
     @enderror
