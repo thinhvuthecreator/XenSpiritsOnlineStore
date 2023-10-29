@@ -15,17 +15,17 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        <a class="nav-link" data-widget="navbar-search" href="http://localhost:8000" role="button">
           <i id="navigator-title">Trang chủ</i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        <a class="nav-link" data-widget="navbar-search" href="http://localhost:8000/products" role="button">
           <i id="navigator-title">Sản phẩm</i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        <a class="nav-link" data-widget="navbar-search" href="http://localhost:8000/size-guide" role="button">
           <i id="navigator-title">Hướng dẫn kích cỡ</i>
         </a>
       </li>
