@@ -146,20 +146,20 @@ class ProductController extends Controller
         $this->add_detail_image($request);
 
         //tạo chi tiết số lượng sau khi tạo sản phẩm
-        $i = 1;
-        $mang[] ='';
-        foreach ($_POST['product_quantity_input'] as $quantity ) {
-            // $lastest_product = DB::table('products')->latest('created_at')->first();
-            // quantity_detail::create([
-            //     'product_id' => $lastest_product->id,
-            //     'quantity' => $quantity,
-            //     'size_id' => $size_id,
-            // ]);
-            $mang[] = $i*2;
-             dd($mang);
-        }
+      
+        $size_quantity = array_combine($_POST['product_size_input'],$_POST['product_quantity_input']);
         
-
+        foreach ($size_quantity as $size_id => $quantity) {
+            $lastest_product = DB::table('products')->latest('created_at')->first();
+            quantity_detail::create([
+                'product_id' => $lastest_product->id,
+                'quantity' => $quantity,
+                'size_id' => $size_id,
+            ]);
+    
+            
+        }
+   
         return redirect(route('foradmin.product.add'));
     }
 
