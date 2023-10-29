@@ -124,12 +124,24 @@
     <input type="text" name="product_price_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product price" value="{{$product->price}}">
     @error('product_price_input')
                     <span style="color : red;">{{$message}}</span><br>
-      @enderror
-      <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
-    <input value="{{$product->quantity}}" type="text" name="product_quantity_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter product quantity">
+    @enderror
+
+    
+    <label style="margin-bottom : -2px">Số lượng sản phẩm</label>
+    @foreach($sizes as $size)
+      @php
+        $quantity = DB::table('quantity_details')->where([
+                                                      ['product_id', '=', $id],
+                                                      ['size_id','=',$size->id] ])->value('quantity');
+      @endphp
+    <input type="text" name="product_quantity_input[]" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Enter quantiy for {{ $size->name}} size" value="{{$quantity}}">
+    <input type="text" name="product_size_input[]" value="{{$size->id}}" style="display:none">
     @error('product_quantity_input')
                     <span style="color : red;">{{$message}}</span><br>
-      @enderror
+    @enderror
+    @endforeach
+
+
       <label style="margin-bottom : -2px">Miêu tả sản phẩm</label>
     <input value="{{$product->productDescription}}" type="text" name="product_description_input" class="form-control" id="productcategory" aria-describedby="productCategory" placeholder="Add product description">
 

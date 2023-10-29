@@ -46,11 +46,12 @@ class ProductController extends Controller
     }
 
     public function EditProduct($id)
-    {
+    {  
+       $sizes = size::all();
        $productCategories = productCategory::all();
        $product = DB::table('products')->where('id',$id)->first();
        $detail_images = DB::table('detail_product_images')->where('product_id',$id)->pluck('name');
-       return view('forAdmin.Product.edit',compact('productCategories','product','detail_images'));
+       return view('forAdmin.Product.edit',compact('productCategories','product','detail_images','sizes','id'));
     }
 
     public function EditProductData(Request $request,$id)
@@ -61,7 +62,7 @@ class ProductController extends Controller
             'product_name_input' => 'required',
 
             'product_price_input' => 'required|numeric|min:0',
-            'product_quantity_input' => 'required|numeric|min:1',
+        
             'product_description_input' => 'nullable'
         ];
         $messages = [
@@ -69,7 +70,7 @@ class ProductController extends Controller
             'image' => 'Đây không phải là file ảnh ! Vui lòng chọn file ảnh',
             'numeric' => 'Vui lòng nhập số',
             'product_price_input.min' => 'Giá sản phẩm không thể âm',
-            'product_quantity_input.min' => 'Số lượng sản phẩm tối thiểu là 1'
+    
 
         ];
         $request->validate($rules,$messages);
@@ -90,9 +91,21 @@ class ProductController extends Controller
             'productCategory_id' => $category_id, 
             'mainImage' => $img,
             'price' => $request->product_price_input,
-            'quantity' => $request->product_quantity_input,
             'productDescription' => $request->product_description_input]);
+        
+        $size_quantity = array_combine($_POST['product_size_input'],$_POST['product_quantity_input']);
+        
+        foreach ($size_quantity as $size_id => $quantity) {
+            DB::table('quantity_details')->where([ ['product_id','=', $id] ,
+                                                    ['size_id','=',$size_id] ])->update(
+                [
+                    'quantity' => $quantity, 
 
+                ]);
+            };
+
+        
+            
 
         if($image = $request->file('product_image_input'))
         {
@@ -146,20 +159,20 @@ class ProductController extends Controller
         $this->add_detail_image($request);
 
         //tạo chi tiết số lượng sau khi tạo sản phẩm
-        $i = 1;
-        $mang[] ='';
-        foreach ($_POST['product_quantity_input'] as $quantity ) {
-            // $lastest_product = DB::table('products')->latest('created_at')->first();
-            // quantity_detail::create([
-            //     'product_id' => $lastest_product->id,
-            //     'quantity' => $quantity,
-            //     'size_id' => $size_id,
-            // ]);
-            $mang[] = $i*2;
-             dd($mang);
-        }
+      
+        $size_quantity = array_combine($_POST['product_size_input'],$_POST['product_quantity_input']);
         
-
+        foreach ($size_quantity as $size_id => $quantity) {
+            $lastest_product = DB::table('products')->latest('created_at')->first();
+            quantity_detail::create([
+                'product_id' => $lastest_product->id,
+                'quantity' => $quantity,
+                'size_id' => $size_id,
+            ]);
+    
+            
+        }
+   
         return redirect(route('foradmin.product.add'));
     }
 

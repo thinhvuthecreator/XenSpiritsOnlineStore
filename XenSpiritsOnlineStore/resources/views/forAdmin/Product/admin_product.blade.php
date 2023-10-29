@@ -49,8 +49,11 @@
       <td> {{ $category_name }}</td>
       <td> {{ $product->name }}</td>
       <td> {{ $product->price }}</td>
-      @foreach($quantity_details as $quantity_detail)      
-      <td> {{ $quantity_detail->size_id }}</td>          
+      @foreach($quantity_details as $quantity_detail) 
+      @php  
+      $size_name =  DB::table('sizes')->where('id', $quantity_detail->size_id)->value('name');
+      @endphp
+      <td> {{ $size_name }}</td>          
       <td> {{ $quantity_detail->quantity }}</td>
       @endforeach
       <td> {{ $product->productDescription }}</td>
