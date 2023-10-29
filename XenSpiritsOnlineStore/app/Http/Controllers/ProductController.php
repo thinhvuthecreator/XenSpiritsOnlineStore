@@ -100,7 +100,6 @@ class ProductController extends Controller
                                                     ['size_id','=',$size_id] ])->update(
                 [
                     'quantity' => $quantity, 
-
                 ]);
             };
 

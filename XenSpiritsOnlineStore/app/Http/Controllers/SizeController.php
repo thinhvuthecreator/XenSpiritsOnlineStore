@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\quantity_detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\size;
+use App\Models\product;
 class SizeController extends Controller
 {
     public function ShowSize(){
@@ -25,6 +27,18 @@ class SizeController extends Controller
       size::create([
         'name' =>  $request->size_input
       ]);
+
+      // cứ mỗi khi có size mới được tạo thì sản phẩm mới sẽ bao gồm size đó
+      $lastest_size = DB::table('sizes')->latest('created_at')->first();
+      $all_products = product::all();
+      foreach ($all_products as $product){
+      quantity_detail::create([
+        'product_id'=> $product->id,
+        'size_id' => $lastest_size->id,
+        'quantity' => 0
+      ]);
+      }
+
 
       return back()->with('success','Thêm thành công');
     }
