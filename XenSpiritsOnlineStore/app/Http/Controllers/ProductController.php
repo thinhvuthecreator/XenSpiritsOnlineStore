@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\detailProductImage;
 use App\Models\product;
+use App\Models\size;
 use App\Models\productCategory;
 use File;
 use Illuminate\Http\Request;
@@ -37,8 +38,9 @@ class ProductController extends Controller
 
     public function AddProduct()
     {
+        $sizes = size::all();
         $productCategories = productCategory::all();
-        return view('forAdmin.Product.add', compact('productCategories'));
+        return view('forAdmin.Product.add', compact('productCategories','sizes'));
     }
 
     public function EditProduct($id)
@@ -131,7 +133,6 @@ class ProductController extends Controller
             'name' => $request->product_name_input,
             'productCategory_id' =>  $product_category_id,
             'mainImage' => $image_original_name,
-            'quantity' => $request->product_quantity_input,
             'productDescription' => $request->product_description_input,
             'price' => $request->product_price_input
         ]);
@@ -141,6 +142,10 @@ class ProductController extends Controller
         
          //tạo phần ảnh chi tiết sản phẩm sau khi tạo sản phẩm
         $this->add_detail_image($request);
+
+        //tạo chi tiết số lượng sau khi tạo sản phẩm
+        
+
         return redirect(route('foradmin.product.add'));
     }
 
