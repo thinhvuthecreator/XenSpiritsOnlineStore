@@ -51,8 +51,9 @@ class LoginController extends Controller
                      $_SESSION['login_status'] = "Logged";
                      
                      //lấy ra thông tin người dùng
-                     $account = Account::where("email", $account->email)->first();
+                     $account = Account::where("email", $account->email)->first(); // account dang duoc dang nhap hop le
                      $user = customer::where("id", $account->client_id)->first();
+                     $_SESSION["account_id"] = $account->id;
                      $_SESSION["client_email"] = $account->email;
                      $_SESSION["client_name"] = $user->full_name;
                      $_SESSION["client_phone"] = $user->phone;

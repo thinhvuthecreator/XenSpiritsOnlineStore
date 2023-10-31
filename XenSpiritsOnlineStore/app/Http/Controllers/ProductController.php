@@ -33,8 +33,10 @@ class ProductController extends Controller
         $product_selected_Category_id =  DB::table('products')->where('id', $id)->value('productCategory_id'); // lay ra ma loai sp dc chon
         $product_category_name = DB::table('product_categories')->where('id', $product_selected_Category_id)->value('name'); // lay ra ten cua ma loai san pham dc chon
         $product_detail_images = DB::table('detail_product_images')->where('product_id', $id)->pluck('name'); // lay ra anh chi tiet san pham;
-        
-        return view('product_detail',compact(['product_selected','product_category_name','product_detail_images']));
+        // $product_sizes = DB::table('quantity_details')->where( [ ['product_id','=',$product_selected->id],
+        //                                                          ['quantity','>','0'] ])->pluck('size_id');
+        $sizes = size::all();
+        return view('product_detail',compact(['product_selected','product_category_name','product_detail_images','sizes']));
 
     }
 
