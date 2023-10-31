@@ -49,13 +49,21 @@
       <td> {{ $category_name }}</td>
       <td> {{ $product->name }}</td>
       <td> {{ $product->price }}</td>
-      @foreach($quantity_details as $quantity_detail) 
+
+      @foreach($sizes as $size) 
       @php  
-      $size_name =  DB::table('sizes')->where('id', $quantity_detail->size_id)->value('name');
+      $quantity_detail =  DB::table('quantity_details')->where( [ ['size_id','=',$size->id],
+                                                                  ['product_id','=',$product->id] ])->first();
       @endphp
-      <td> {{ $size_name }}</td>          
+      <td> {{ $size->name }}</td> 
+      @if(!is_null($quantity_detail))
       <td> {{ $quantity_detail->quantity }}</td>
+      @else
+      <td>0</td>
+      @endif
+
       @endforeach
+
       <td> {{ $product->productDescription }}</td>
       <td> {{ $product->created_at }}</td>
       <td> 
