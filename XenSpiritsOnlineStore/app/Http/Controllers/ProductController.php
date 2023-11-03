@@ -7,6 +7,7 @@ use App\Models\product;
 use App\Models\quantity_detail;
 use App\Models\size;
 use App\Models\productCategory;
+use App\Models\Wishlist;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -222,6 +223,15 @@ class ProductController extends Controller
         }  
     }
 
+    public function add_to_wishlist()
+    {
+        $product_id=$_POST['product_id'];
+        $account_id=$_POST['account_id'];
+        
+        Wishlist::create(['product_id' => $product_id,
+                          'account_id' => $account_id ] );
+                          
+    }
             
 
       

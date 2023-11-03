@@ -2,11 +2,12 @@
       <title>Xen. Spirits® | Product Details</title>
       <link rel="stylesheet" href="{{asset('CSS/product_detail_style.css')}}">
       <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
-
+      <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     @include('/Reusable/on-top-page')
     <br><br>
     <div class="container">
@@ -53,12 +54,27 @@
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                       }
+                     if(isset($_SESSION["account_id"])) 
+                     {
                      $current_account_id = $_SESSION["account_id"];
+                     }
+                     else
+                     {
+                        $current_account_id = -1;
+                     }
                     @endphp
                     <input type="text" id="product_id" style="display:none" value="{{ $product_selected->id }}"> 
                     <input type="text" id="account_id" style="display:none" value="{{  $current_account_id }}"> 
-                    <td><button type="submit" id="add_wishlist_btn" class="purchase-btn">Thêm vào yêu thích</button></td>
-                    <td><button type="submit" id="add_cart_btn" class="purchase-btn">Thêm vào giỏ hàng</button></td>
+                    <td>
+                        <form id="wishlist_form" method="POST">
+                        <input type="submit" id="add_wishlist_btn" class="purchase-btn" value ="Thêm vào yêu thích">
+                        </form>
+                    </td>
+                    <td>
+                        <form id="cart_form" method="POST">
+                        <input type="submit" id="add_cart_btn" class="purchase-btn" value ="Thêm vào giỏ hàng">
+                        </form>
+                    </td>
                 </tr>
             <table>
         </div>
@@ -66,19 +82,21 @@
     </div>
    
     <script>
-        $(document).ready(function(){
-            $("#add_wishlist_btn").click(function(){
+        $(function(){
+            $("#wishlist_form").submit(function(e){
+                e.preventDefault();
                 var product_id=$("#product_id").val();
                 var account_id=$("#account_id").val();
                 $.ajax({
-                    url:'insert.php',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                    url:'http://localhost:8000/products/detail/insert.php',
                     method:'POST',
                     data:{
                         product_id:product_id,
                         account_id:account_id
                     },
                    success:function(data){
-                       alert(data);
+                       alert("Đã thêm vào yêu thích thành công");
                    }
                 });
             });
