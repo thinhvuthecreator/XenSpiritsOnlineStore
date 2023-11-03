@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" id="cart-content">
+            <a class="nav-link" id="wishlist-content">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Giỏ hàng
@@ -99,8 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       e.preventDefault();
       $("#content").load("/profile-info");
     });
-    $("#cart-content").click(function(e) {
+    $("#wishlist-content").click(function(e) {
       e.preventDefault();
+      $("#content").load("/customer-wishlist");
     });
 </script>
 

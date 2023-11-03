@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\WishlistController;
 use App\Http\Middleware\AdminAccess;
 use App\Models\LoginStatus;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ Route::get('/size-guide',[HomeController::class,'ShowSizeGuide']);
 Route::prefix('/products')->group(function(){
     Route::get('/',[ProductController::class,'ShowProductClient'])->name('product_client');
     Route::get('/detail/{id}',[ProductController::class,'ShowProductDetail'])->name('product_detail_client');
-    Route::post('/detail/insert.php',[ProductController::class,'add_to_wishlist']);
+    Route::post('/detail/insert.php',[WishlistController::class,'add_to_wishlist']);
 });
 Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');
@@ -48,7 +49,7 @@ Route::get('/profile-info', function(){
     return view('forClient.Info');
 });
 Route::get('/logout',[LoginController::class,'Logout'])->name('logout');
-
+Route::get('/customer-wishlist',[WishlistController::class,'ShowWishlist']);
 
 Route::prefix('/admin')->group(function(){
 

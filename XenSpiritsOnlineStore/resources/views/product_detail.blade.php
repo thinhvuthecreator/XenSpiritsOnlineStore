@@ -54,7 +54,14 @@
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                       }
+                     if(isset($_SESSION["account_id"])) 
+                     {
                      $current_account_id = $_SESSION["account_id"];
+                     }
+                     else
+                     {
+                        $current_account_id = -1;
+                     }
                     @endphp
                     <input type="text" id="product_id" style="display:none" value="{{ $product_selected->id }}"> 
                     <input type="text" id="account_id" style="display:none" value="{{  $current_account_id }}"> 
