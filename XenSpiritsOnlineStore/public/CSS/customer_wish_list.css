@@ -8,9 +8,13 @@
 }
 .table-wishlist{
     overflow-y: auto;
+    overflow-x: auto;
+    width: 600;
+    height: 550px;
 }
 .table-wishlist table {
     width: 100%;
+    
 }
 .table-wishlist table thead {
     

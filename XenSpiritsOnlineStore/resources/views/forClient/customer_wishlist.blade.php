@@ -47,7 +47,7 @@
 					        		<td width="35%" class="price">{{$product_price}}</td>
 					        		<td width="35%"><span class="in-stock-box">In Stock</span></td>
 					        		<td width="200"><button class="round-black-btn small-btn" style="margin-right : 90px">Add to Cart</button></td>
-					        		<td width="200" class="text-center"><a href="#" class="trash-icon"><i class="far fa-trash-alt"></i></a></td>
+					        		<td width="200" class="text-center"><a href="#" class="trash-icon"><i class="far fa-trash-alt" style="margin-right : 20px"></i></a></td>
 					        	</tr>
 					        	@endforeach
 				        	</tbody>
