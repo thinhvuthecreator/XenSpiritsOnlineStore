@@ -6,10 +6,14 @@
 	font-size: 19px;
 	margin-bottom: 20px;
 }
+.table-wishlist{
+    overflow-y: auto;
+}
 .table-wishlist table {
     width: 100%;
 }
-.table-wishlist thead {
+.table-wishlist table thead {
+    
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 5px;
 }

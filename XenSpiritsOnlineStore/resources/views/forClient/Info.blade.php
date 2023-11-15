@@ -18,7 +18,7 @@ $user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
 @endphp
 <div class="row">
         <div class="col-md-6" id="user-info-container">
-                     <label id="user-info-title">Thông tin cá nhân</label>
+                     <label id="user-info-title" style="visibility: hidden">Thông tin cá nhân</label>
                      <img id="image" src="https://i.pinimg.com/originals/9e/17/6f/9e176f0eb722cdaf920fd267c3a4f2a6.jpg">
                      <form class="user-info-form" method="POST" action="{{ route('customer.profile.changeData') }}">
                      @csrf 
@@ -53,7 +53,7 @@ $user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
     </script>
       </div>
         <div class="col-md-6" id="account-info-container">
-        <label id="account-info-title" >Thông tin tài khoản</label>
+        <label id="account-info-title" style="visibility: hidden">Thông tin tài khoản</label>
         <form class="account-info-form" method="POST" action="{{ route('customer.profile.changepassData') }}">
                    @csrf
                     <label>Email</label><br>
