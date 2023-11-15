@@ -123,3 +123,8 @@
 body{
     overflow: hidden;
 }
+
+#content{
+    position: relative;
+    top: -280px;
+}

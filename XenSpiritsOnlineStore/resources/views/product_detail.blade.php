@@ -67,11 +67,13 @@
                     <input type="text" id="account_id" style="display:none" value="{{  $current_account_id }}"> 
                     <td>
                         <form id="wishlist_form" method="POST">
+                            @csrf
                         <input type="submit" id="add_wishlist_btn" class="purchase-btn" value ="Thêm vào yêu thích">
                         </form>
                     </td>
                     <td>
                         <form id="cart_form" method="POST">
+                            @csrf
                         <input type="submit" id="add_cart_btn" class="purchase-btn" value ="Thêm vào giỏ hàng">
                         </form>
                     </td>

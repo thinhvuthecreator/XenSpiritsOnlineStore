@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class WishlistController extends Controller
 {
     public function add_to_wishlist()
@@ -17,6 +17,12 @@ class WishlistController extends Controller
 
     public function ShowWishlist()
     {
-        return view('customer_wishlist');
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        $client_id = $_SESSION["client_id"];
+        $account_id = DB::table('accounts')->where('client_id',$client_id)->value('id');
+        $wishlists = DB::table('wishlists')->where('account_id',$account_id)->get();
+        return view('forClient.customer_wishlist',compact('wishlists'));
     }
 }

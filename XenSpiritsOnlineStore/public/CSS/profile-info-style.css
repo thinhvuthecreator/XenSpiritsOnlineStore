@@ -8,7 +8,8 @@
 .user-info-form{
   position: relative;
   left: 400px;
-  top: -645px;
+  top: -410px;
+  z-index: 4;
 }
 
 
@@ -22,13 +23,13 @@
 
 #edit_btn{
     position: relative;
-    top: -640px;
+    top: -410px;
     left: 400px;
     z-index: 4;
 }
 #cancel_btn{
     position: relative;
-    top: -640px;
+    top: -410px;
     left: 468px;
     z-index: 4;
     display : none
@@ -38,7 +39,7 @@
 .account-info-form{
    
     position: relative;
-    top: -220px;
+    top: 10px;
     left: 650px;
 }
 
@@ -67,20 +68,21 @@
 #cancel_acc_btn{
     position: relative;
     left: 617px;
-    top: -215px;
+    top: 0px;
     display : none;
 }
 
 #edit_acc_btn{
     position: relative;
-    top: -215px;
+    top:  0px;
+    margin-top: 5px;
     left: 550px;
 }
 
 
 #info-title{
     position: relative;
-    top: -390;
+    top: -155;
     left: 150;
     margin-bottom: 10px; 
     font-size: 20px; 
@@ -96,7 +98,7 @@
 #image{
     position: relative;
     left: 50px;
-    top: -235px;
+    top: 0px;
     width: 340px;
     height: 380px;
     display:inline; 
@@ -110,7 +112,7 @@
 
 #user-info-title{
     position: relative;
-    top: -230px;
+    top: 0px;
     left: 50px;
     margin-bottom: 40px;
     font-size: 18px; 
@@ -123,7 +125,7 @@
 
 #account-info-title{
     position: relative;
-    top: -220px;
+    top: 0px;
     left: 650px;
    
 }
