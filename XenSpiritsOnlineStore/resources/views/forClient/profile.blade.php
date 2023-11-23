@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a class="nav-link" id="wishlist-content">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Giỏ hàng
+                Yêu thích
               </p>
             </a>
           </li>
@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a class="nav-link" id="bill-content">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Đã mua
+                Giỏ hàng
               </p>
             </a>
           </li>
