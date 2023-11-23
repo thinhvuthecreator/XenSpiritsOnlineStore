@@ -124,6 +124,10 @@ body{
     overflow: hidden;
 }
 
+.content-wrapper{
+    background-color: white;
+}
+
 #content{
     position: relative;
     top: -280px;
