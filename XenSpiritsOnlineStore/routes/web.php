@@ -35,7 +35,11 @@ Route::prefix('/products')->group(function(){
     Route::get('/detail/{id}',[ProductController::class,'ShowProductDetail'])->name('product_detail_client');
     Route::post('/detail/insert.php',[WishlistController::class,'add_to_wishlist']);
 });
-Route::get('/wishlist',[HomeController::class,'ShowWishlist']);
+Route::prefix('/wishlist')->group(function(){
+    Route::get('/',[HomeController::class,'ShowWishlist']);
+    Route::get('/delete/{id}',[WishlistController::class,'DeleteWishItem'])->name('delete_item');
+});
+
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');
 Route::post('/login',[LoginController::class,'Login'])->name('login');
 Route::get('/register',[LoginController::class,'ShowRegister']);
