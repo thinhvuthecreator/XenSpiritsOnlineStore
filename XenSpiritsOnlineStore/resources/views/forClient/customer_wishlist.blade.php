@@ -54,7 +54,7 @@
 	                                </td>
 					        		<td width="35%" class="price">{{$product_price}}</td>
 					        		<td width="35%"><span class="in-stock-box">Còn hàng</span></td>
-					        		<td width="200"><button class="round-black-btn small-btn" style="margin-right : 90px">Add to Cart</button></td>
+					        		<td width="200"><button class="round-black-btn small-btn" style="margin-right : 90px" value="{{$wishlist_id}}">Add to Cart</button></td>
 					        		<td width="200" class="text-center"><a href="{{ route('delete_item',[$wishlist_id]) }}" class="trash-icon" value="{{$wishlist_id}}"><i class="far fa-trash-alt" style="margin-right : 20px"></i></a></td>
 					        	</tr>
 					        	@endforeach
@@ -67,7 +67,9 @@
 			</div>
 		</div>
 	</div>
-<!-- <script>
+
+
+<script>
 	$(".trash-icon").click(function(){
 		var cf =  confirm('Xóa sản phẩm này ra khỏi yêu thích ?');
 		if (cf === true)
@@ -92,7 +94,35 @@
 			
 	    }
    });
-</script> -->
+
+   $(".small-btn").click(function(){
+		var cf =  confirm('Xóa sản phẩm này ra khỏi yêu thích ?');
+		if (cf === true)
+		{
+            var id = $(this).attr("value");
+			
+            $.ajax(
+			{
+            url: "wishlist/delete/"+id,
+            type: "GET",
+			dataType: 'json',
+            data: {
+                "id" : id,
+            },
+            success: function ()
+            {
+				
+			}
+			});
+		
+		    alert(id);
+			
+	    }
+   });
+</script>
+
+
+
 	
 </body>
 	
