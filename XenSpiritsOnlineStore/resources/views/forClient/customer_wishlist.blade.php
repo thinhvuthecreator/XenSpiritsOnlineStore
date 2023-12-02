@@ -3,9 +3,11 @@
 <link rel="stylesheet" href="{{asset('CSS/customer_wish_list.CSS')}}"></link>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 	<div class="cart-wrap">
 		<div class="container">
 	        <div class="row">
@@ -26,6 +28,7 @@
 					        <tbody>
 								@foreach($wishlists as $wishlist)
 								 @php
+								   $wishlist_id = $wishlist->id;
 								   $product_id = $wishlist->product_id;
 								   $product_image = DB::table('products')->where('id', $wishlist->product_id)->value('mainImage'); 
 								   $product_name = DB::table('products')->where('id', $wishlist->product_id)->value('name'); 
@@ -52,16 +55,44 @@
 					        		<td width="35%" class="price">{{$product_price}}</td>
 					        		<td width="35%"><span class="in-stock-box">Còn hàng</span></td>
 					        		<td width="200"><button class="round-black-btn small-btn" style="margin-right : 90px">Add to Cart</button></td>
-					        		<td width="200" class="text-center"><a href="#" class="trash-icon"><i class="far fa-trash-alt" style="margin-right : 20px"></i></a></td>
+					        		<td width="200" class="text-center"><a href="{{ route('delete_item',[$wishlist_id]) }}" class="trash-icon" value="{{$wishlist_id}}"><i class="far fa-trash-alt" style="margin-right : 20px"></i></a></td>
 					        	</tr>
 					        	@endforeach
 				        	</tbody>
 				        </table>
-					
 				    </div>
+					
+
 			    </div>
 			</div>
 		</div>
 	</div>
+<!-- <script>
+	$(".trash-icon").click(function(){
+		var cf =  confirm('Xóa sản phẩm này ra khỏi yêu thích ?');
+		if (cf === true)
+		{
+            var id = $(this).attr("value");
+			
+            $.ajax(
+			{
+            url: "wishlist/delete/"+id,
+            type: "GET",
+			dataType: 'json',
+            data: {
+                "id" : id,
+            },
+            success: function ()
+            {
+				
+			}
+			});
+		
+		    alert(id);
+			
+	    }
+   });
+</script> -->
+	
 </body>
 	
