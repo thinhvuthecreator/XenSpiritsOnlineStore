@@ -10,7 +10,9 @@ class Cart extends Model
     use HasFactory;
 
     protected $fillable = [
-        'account_id'
+        'product_id',
+        'quantity',
+        'shopping_session_id'
     ];
 
 }

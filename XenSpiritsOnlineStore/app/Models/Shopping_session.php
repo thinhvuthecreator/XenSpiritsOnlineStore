@@ -11,7 +11,6 @@ class Shopping_session extends Model
 
     protected $fillable = [
         'account_id',
-        'cart_id',
         'payment_type',
         'purchase_status'
     ];
