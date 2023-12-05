@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shopping_session', function (Blueprint $table) {
-            $table->id();
-            $table->integer("account_id");
-            $table->integer("cart_id");
-            $table->string("payment_type");
-            $table->string("purchase_status");
-            $table->timestamps();
+        Schema::table('shopping_session', function (Blueprint $table) {
+            $table->dropColumn('cart_id');
+           
         });
     }
 

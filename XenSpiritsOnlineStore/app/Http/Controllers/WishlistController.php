@@ -31,7 +31,10 @@ class WishlistController extends Controller
 
     public function DeleteWishItem($id){
        Wishlist::destroy($id);
-       return redirect()->back();
+    $data = array("success" => true, "message" => "Xóa khỏi yêu thích thành công");
+    header("Content-Type: application/json");
+    return json_encode($data);
+
     }
 
     public function AddToCart($item_id)
@@ -41,7 +44,7 @@ class WishlistController extends Controller
        }
 
        // lấy ra shopping session hiện tại ( mới nhất ) của account đang đăng nhập
-       $shopping_session = DB::table('shopping_session')->where('account_id',$_SESSION["account_id"])->lastest('created_at')->first()->get();
+       $shopping_session = DB::table('shopping_sessions')->where('account_id',$_SESSION["account_id"])->latest('created_at')->first();
 
        if($shopping_session == null || $shopping_session->purchase_status != "pending") // cần thêm mới shopping session
        {
@@ -51,7 +54,7 @@ class WishlistController extends Controller
             'payment_type' => 'cod'
             ]);
             // shopping session vừa thêm mới
-            $current_shopping_session = DB::table('shopping_session')->where('account_id',$_SESSION["account_id"])->lastest('created_at')->first()->get();
+            $current_shopping_session = DB::table('shopping_sessions')->where('account_id',$_SESSION["account_id"])->latest('created_at')->first();
              // tạo giỏ hàng, thêm sản phẩm vào giỏ hàng
             Cart::create([
               'product_id' => $item_id,
@@ -59,13 +62,13 @@ class WishlistController extends Controller
               'shopping_session_id' => $current_shopping_session->id
             ]);
 
-        }
-        else if ($shopping_session->purchase_status == "pending") // shopping session trước đó vẫn bằng pending, dùng luôn shopping session hiện tại ko cần thêm mới
+       }
+        else if ($shopping_session != null && $shopping_session->purchase_status == "pending") // shopping session trước đó vẫn bằng pending, dùng luôn shopping session hiện tại ko cần thêm mới
         {
-            // chỉnh sửa lại cart nằm trong shopping session hiện tại
+           // chỉnh sửa lại cart nằm trong shopping session hiện tại
            if(!$this->check_item_duplicated($shopping_session, $item_id)) // nếu sản phẩm này ko có trong cart này
            {
-             // tạo giỏ hàng, thêm sản phẩm vào giỏ hàng
+             //tạo giỏ hàng, thêm sản phẩm vào giỏ hàng
              Cart::create([
               'product_id' => $item_id,
               'quantity' => 1,
@@ -74,20 +77,26 @@ class WishlistController extends Controller
            }
            else
            {
-            DB::table('carts')->where(['shopping_session_id', $shopping_session->id],
-                                       ['product_id', $item_id])->update([
-                'quantity' => 'quantity' + 1
+
+            $quantity = DB::table('carts')->where([['shopping_session_id','=', $shopping_session->id],
+            ['product_id','=', $item_id] ])->value('quantity');
+
+            DB::table('carts')->where([ ['shopping_session_id', '=',$shopping_session->id],
+                                       ['product_id','=', $item_id] ])->update([
+                'quantity' => $quantity + 1
              ]);
            }
         }
+
+    $data = array("success" => true, "message" => "Đã thêm vào giỏ hàng");
+    header("Content-Type: application/json");
+    return json_encode($data);
         
     }
            
     public function check_item_duplicated($shopping_session, $item_id)
     {
        
- 
-
         // lấy ra các item của cart thuộc shopping session hiện tại
         $current_cart = DB::table("carts")->where('shopping_session_id', $shopping_session->id)->get();
 

@@ -21,6 +21,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('CSS/customer.profile.css')}}">
 
   <link rel="stylesheet" href="{{asset('CSS/customer.sidebar.css')}}">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -72,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" id="wishlist-content">
+            <a class="nav-link" id="wishlist-content" href="{{ route('show-wishlist') }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Yêu thích
@@ -80,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" id="bill-content">
+            <a class="nav-link" id="bill-content" href="{{ route('show-cart') }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Giỏ hàng
@@ -93,17 +94,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.sidebar -->
   </aside>
-
-<script>
-    $("#info-content").click(function(e) {
-      e.preventDefault();
-      $("#content").load("/profile-info");
-    });
-    $("#wishlist-content").click(function(e) {
-      e.preventDefault();
-      $("#content").load("/customer-wishlist");
-    });
-</script>
 
  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,6 +108,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row" id="content">
+
+        @yield('content')
+
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
