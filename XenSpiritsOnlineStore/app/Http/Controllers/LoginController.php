@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Shopping_session;
 use App\Models\Staff;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Account;
@@ -53,6 +54,7 @@ class LoginController extends Controller
                      //lấy ra thông tin người dùng
                      $account = Account::where("email", $account->email)->first(); // account dang duoc dang nhap hop le
                      $user = customer::where("id", $account->client_id)->first();
+                     $shopping_session = Shopping_session::where('account_id',$account->id)->first();
                      $_SESSION["account_id"] = $account->id;
                      $_SESSION["client_email"] = $account->email;
                      $_SESSION["client_name"] = $user->full_name;
@@ -60,6 +62,7 @@ class LoginController extends Controller
                      $_SESSION["client_address"] = $user->address;
                      $_SESSION["client_image"] = $user->image;
                      $_SESSION["client_id"] = $user->id;
+                     $_SESSION["shopping_session"] = $shopping_session;
                      return redirect(route('home'));  
                       
                   }

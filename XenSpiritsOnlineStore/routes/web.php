@@ -15,6 +15,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CartController;
 use PHPUnit\Framework\Attributes\Group;
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,18 @@ Route::prefix('/products')->group(function(){
 });
 Route::prefix('/wishlist')->group(function(){
     Route::get('/',[HomeController::class,'ShowWishlist']);
-    Route::get('/delete/{id}',[WishlistController::class,'DeleteWishItem'])->name('delete_item');
+});
+
+Route::prefix('/customer-wishlist')->group(function(){
+    Route::get('/',[WishlistController::class,'ShowWishlist'])->name('show-wishlist');
+    Route::post('delete/{id}',[WishlistController::class,'DeleteWishItem'])->name('delete_item');
+    Route::post('add-to-cart/{item_id}',[WishlistController::class,'AddToCart'])->name('add_to_cart');
+});
+
+Route::prefix('/cart')->group(function(){
+    Route::get('/',[CartController::class,'ShowCart'])->name('show-cart');
+    Route::post('delete/{id}',[CartController::class,'DeleteCartItem'])->name('delete_item');
+    Route::post('checkout/{item_id}',[CartController::class,'CheckOut'])->name('checkout');
 });
 
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');
@@ -53,7 +65,7 @@ Route::get('/profile-info', function(){
     return view('forClient.Info');
 });
 Route::get('/logout',[LoginController::class,'Logout'])->name('logout');
-Route::get('/customer-wishlist',[WishlistController::class,'ShowWishlist']);
+
 
 Route::prefix('/admin')->group(function(){
 
