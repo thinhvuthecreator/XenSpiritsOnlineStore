@@ -49,7 +49,7 @@ Route::prefix('/customer-wishlist')->group(function(){
 Route::prefix('/cart')->group(function(){
     Route::get('/',[CartController::class,'ShowCart'])->name('show-cart');
     Route::post('delete/{id}',[CartController::class,'DeleteCartItem'])->name('delete_item');
-    Route::post('checkout/{item_id}',[CartController::class,'CheckOut'])->name('checkout');
+    Route::get('checkout/{ids}',[CartController::class,'ShowCheckOut'])->name('checkout');
 });
 
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');

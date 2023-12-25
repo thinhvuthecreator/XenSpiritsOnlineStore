@@ -62,6 +62,8 @@ class WishlistController extends Controller
               'shopping_session_id' => $current_shopping_session->id
             ]);
 
+            $shopping_session = Shopping_session::where('account_id',$_SESSION["account_id"])->first();
+            $_SESSION["shopping_session"] = $shopping_session;
        }
         else if ($shopping_session != null && $shopping_session->purchase_status == "pending") // shopping session trước đó vẫn bằng pending, dùng luôn shopping session hiện tại ko cần thêm mới
         {
