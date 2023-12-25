@@ -19,9 +19,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="icon" href="{{asset('Resource/XenTitleIcon.png')}}" type="image/icon type">
   <!-- CSS -->
   <link rel="stylesheet" href="{{asset('CSS/customer.profile.css')}}">
-
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="{{asset('CSS/customer_wish_list.CSS')}}"></link>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <link rel="stylesheet" href="{{asset('CSS/customer.sidebar.css')}}">
+
   <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 </head>
 <body class="hold-transition sidebar-mini">
 

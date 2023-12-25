@@ -1,12 +1,4 @@
-<head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="{{asset('CSS/customer_wish_list.CSS')}}"></link>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta name="csrf-token" content="{{ csrf_token() }}" />
-<!------ Include the above in your HEAD tag ---------->
-</head>
-<body>
+
 @extends('forClient.profile')
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 @section('content')	
@@ -143,6 +135,4 @@
 
 @endsection
 
-	
-</body>
 	
