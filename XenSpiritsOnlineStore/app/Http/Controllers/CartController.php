@@ -28,19 +28,19 @@ class CartController extends Controller
     }
     public function ShowCheckOut($ids){
         $cart_ids = explode(",", $ids);
-        $carts[] = "";
+        $carts = array();
         foreach($cart_ids as $cart_id)
         {
-            $carts[] = DB::table('carts')->where('id',$cart_id)->get();
+            $carts[] = DB::table('carts')->where('id',$cart_id)->get()->first();
+
         }
-        // return view('forClient.customer_checkout', compact('carts'));
-        $data = array("success" => true, "message" => $ids);
-        return json_encode($data);
+        return view('forClient.customer_checkout', compact('carts'));
+
     }
 
     public function CheckOut($ids)
     {
-
+        
     }
 
 

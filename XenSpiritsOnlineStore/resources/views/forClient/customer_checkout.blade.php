@@ -6,8 +6,7 @@
 		<div class="container">
 	        <div class="row">
 			    <div class="col-md-12">		
-			        <div class="table-wishlist">
-					
+			        <div class="table-wishlist">					
 				        <table cellpadding="0" cellspacing="0" border="0" width="100%" id="table-cart">
 				        	<thead>
 					        	<tr>
@@ -15,8 +14,7 @@
 					        		<th width="150">Tên sản phẩm</th>
 					        		<th width="35%">Giá sản phẩm</th>
 					        		<th width="55%">Số lượng</th>
-					        		<th width="200"><label style="margin-right: 2px">All</label><input id="all-checkbox" type="checkbox"></input></th>
-                                    <th width="200"> <button style="width: 100px; visibility : hidden" class="in-stock-box" id="check-out-button"> Check Out </button></th>
+				
 					        	</tr>
 					        </thead>
 					        <tbody>
@@ -51,8 +49,7 @@
 					        		<td width="85%" class="price">{{$product_price}}</td>
 					        		<td width="55%"><span class="in-stock-box" style="margin-right : 90px">{{ $quantity }}</span></td>
 									<!-- <td width="200"><a href="{{ route('add_to_cart', ['item_id' => $product_id]) }}" class="round-black-btn small-btn" style="margin-right : 90px" value="{{$product_id}}">Add to Cart</a></td> -->
-					        		<td width="200" class="text-center"><a href="#" class="trash-icon"style="margin-right : 40px"  value="{{$cart_id}}"><i class="far fa-trash-alt" style="margin-right : 20px"></i></a></td>
-                                    <td width="200" class="text-center"><input class="check-out-checkbox" type="checkbox" value="{{$cart_id}}"></td>
+		
 					        	</tr>
 					        	@endforeach
                                 @endif
@@ -60,6 +57,9 @@
 				        </table>
 				    </div>
 			    </div>
+                <div class="col-md-6" style="background-color : pink">	
+
+               </div>
 			</div>
 		</div>
 	</div>

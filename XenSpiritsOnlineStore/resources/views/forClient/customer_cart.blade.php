@@ -16,7 +16,7 @@
 					        		<th width="35%">Giá sản phẩm</th>
 					        		<th width="55%">Số lượng</th>
 					        		<th width="200"><label style="margin-right: 2px">All</label><input id="all-checkbox" type="checkbox"></input></th>
-                                    <th width="200"> <a href= "#" id="check-out-button" style="visibility : hidden"><button style="width: 100px " class="in-stock-box" > Check Out </button> </a></th>
+                                    <th width="200"> <a id="check-out-button" style="visibility : hidden"><button style="width: 100px " class="in-stock-box" > Check Out </button> </a></th>
 					        	</tr>
 					        </thead>
 					        <tbody>
@@ -194,22 +194,7 @@
                cf = confirm("Thanh toán các sản phẩm này ? ");
                if(cf === true)
                {
-                   $.ajax(
-                       {
-                           dataType: 'json',
-                           url: "./cart/checkout/" + str,
-                           type: "GET",
-                           data: { },
-                           success: function (rs) {
-                              if(rs.success)
-                              {
-                                alert(rs.message);
-                              }
-                           },
-                           error: function (data, textStatus, errorThrown) {
-                               alert(errorThrown);
-                           }
-                       });
+					   window.location.href = "./cart/checkout/" + str;
                }
             }
             else
@@ -226,12 +211,14 @@
             checkbox.each(function () {
                 $(this).prop('checked', true);
             });
+			$('#check-out-button').css("visibility","visible");
         }
         else
         {
             checkbox.each(function () {
                 $(this).prop('checked', false);
             });
+			$('#check-out-button').css("visibility","hidden");
         }
    });
   
