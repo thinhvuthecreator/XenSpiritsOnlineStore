@@ -1,0 +1,1 @@
+chúc mừng bạn đã đặt hàng thành công ! (Phương thức thanh toán : thanh toán khi nhân hàng )

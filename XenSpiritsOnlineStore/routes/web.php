@@ -50,6 +50,7 @@ Route::prefix('/cart')->group(function(){
     Route::get('/',[CartController::class,'ShowCart'])->name('show-cart');
     Route::post('delete/{id}',[CartController::class,'DeleteCartItem'])->name('delete_item');
     Route::get('checkout/{ids}',[CartController::class,'ShowCheckOut'])->name('checkout');
+    Route::get('checkout-confirm/{ids}',[CartController::class,'CheckOut'])->name('confirm_checkout');
 });
 
 Route::get('/login',[LoginController::class,'ShowLogin'])->name('showlogin');

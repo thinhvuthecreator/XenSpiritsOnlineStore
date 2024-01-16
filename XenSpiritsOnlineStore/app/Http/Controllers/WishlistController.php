@@ -51,7 +51,6 @@ class WishlistController extends Controller
             Shopping_session::create([
             'account_id' => $_SESSION["account_id"],
             'purchase_status' => 'pending',
-            'payment_type' => 'cod'
             ]);
             // shopping session vừa thêm mới
             $current_shopping_session = DB::table('shopping_sessions')->where('account_id',$_SESSION["account_id"])->latest('created_at')->first();

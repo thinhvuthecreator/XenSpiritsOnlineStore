@@ -62,6 +62,7 @@ class LoginController extends Controller
                      $_SESSION["client_address"] = $user->address;
                      $_SESSION["client_image"] = $user->image;
                      $_SESSION["client_id"] = $user->id;
+                     $_SESSION["phone"] = $user->phone;
                      $_SESSION["shopping_session"] = $shopping_session;
                      return redirect(route('home'));  
                       

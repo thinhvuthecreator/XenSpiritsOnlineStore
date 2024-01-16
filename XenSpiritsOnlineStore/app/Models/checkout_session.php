@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Shopping_session extends Model
+class checkout_session extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'account_id',
-        'purchase_status'
+        "payment_type",
+        "cart_id"
     ];
 }

@@ -1,0 +1,32 @@
+#table-cart{
+    
+}
+
+#checkout-info{
+    width: 300px;
+    background-color:rgb(0, 0, 0);
+}
+#payment_choices_select{
+    margin-bottom: 50px;
+}
+#checkout-btn-confirm{
+    width: 170;
+    height: 50px;
+    color: white;
+    background-color: black;
+    margin: 0 auto;
+}
+
+label{
+    color : rgb(0, 255, 200);
+}
+
+select{
+    height: 30;
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+select option{
+    height: 30;
+}

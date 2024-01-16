@@ -1,8 +1,7 @@
-<head>
-  <link rel="stylesheet" href="{{asset('CSS/profile-info-style.css')}}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-</head>
-<body>
+@extends('forClient.profile')
+
+<link rel="stylesheet" href="{{asset('CSS/profile-info-style.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 @php
 if (session_status() == PHP_SESSION_NONE) {
@@ -16,10 +15,11 @@ $user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
                      $_SESSION["client_address"] = $user->address;
                      $_SESSION["client_image"] = $user->image;
 @endphp
+@section('content')	
 <div class="row">
         <div class="col-md-6" id="user-info-container">
                      <label id="user-info-title" style="visibility: hidden">Thông tin cá nhân</label>
-                     <img id="image" src="https://i.pinimg.com/originals/9e/17/6f/9e176f0eb722cdaf920fd267c3a4f2a6.jpg">
+                     <img id="image" src="https://www.mobafire.com/images/champion/square/yasuo.png">
                      <form class="user-info-form" method="POST" action="{{ route('customer.profile.changeData') }}">
                      @csrf 
                      <label>Tên</label><br>
@@ -100,5 +100,4 @@ $user = DB::table('customers')->where("id", $_SESSION["client_id"])->first();
     </script>
         </div>
 </div>
-
-</body>
+@endsection
